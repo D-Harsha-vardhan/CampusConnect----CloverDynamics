@@ -1,0 +1,12 @@
+[
+  {
+    "research_id": "RES001",
+    "person_id": "STU001",
+    "title": "Edge AI Inference Speed Optimization",
+    "abstract": "A study on improving FPS for object detection models on ARM-based microcomputers.",
+    "research_area": "Edge AI",
+    "methodologies": ["Model Quantization"],
+    "keywords": ["Edge AI", "Computer Vision", "YOLO"],
+    "publication": "None"
+  }
+]

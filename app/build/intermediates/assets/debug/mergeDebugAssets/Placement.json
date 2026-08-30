@@ -1,0 +1,12 @@
+[
+  {
+    "placement_id": "PLC001",
+    "student_id": "STU001",
+    "company": "Microsoft",
+    "role": "Software Engineer",
+    "skills": ["System Design", "DSA", "Backend"],
+    "interview_topics": ["Distributed Systems", "Graph Algorithms"],
+    "outcome": "Offer Received",
+    "year": "2024"
+  }
+]
