@@ -1,0 +1,10 @@
+[
+  {
+    "faculty_id": "FAC001",
+    "name": "Dr. Aditi Verma",
+    "department": "CSE",
+    "research_interests": ["Computer Vision", "Robotics"],
+    "publications": ["Efficient Object Detection for Drones"],
+    "expertise": ["Deep Learning", "Edge Computing"]
+  }
+]

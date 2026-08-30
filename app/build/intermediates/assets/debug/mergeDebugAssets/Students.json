@@ -1,0 +1,13 @@
+[
+  {
+    "student_id": "STU001",
+    "name": "Rahul Sharma",
+    "department": "CSE",
+    "year": "Final Year",
+    "skills": ["YOLO", "Computer Vision", "Python", "Raspberry Pi", "Edge AI"],
+    "projects": ["PRJ001"],
+    "research_interests": ["Edge Deployment", "Model Optimization"],
+    "certifications": ["AWS ML Specialty"],
+    "career_interests": ["Machine Learning Engineer", "Computer Vision Researcher"]
+  }
+]

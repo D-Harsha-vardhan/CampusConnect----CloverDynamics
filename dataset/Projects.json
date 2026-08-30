@@ -1,0 +1,12 @@
+[
+  {
+    "project_id": "PRJ001",
+    "student_id": "STU001",
+    "title": "Optimizing YOLO on Raspberry Pi",
+    "description": "Real-time YOLO-based object detection on resource-constrained edge hardware.",
+    "technologies": ["YOLO", "Raspberry Pi", "Python", "TensorFlow Lite"],
+    "domain": "Computer Vision",
+    "methodology": "Quantization and pruning",
+    "year": "2023"
+  }
+]
