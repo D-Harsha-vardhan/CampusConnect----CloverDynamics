@@ -31,6 +31,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.foundation.Canvas
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.Stroke
 import com.example.collisionengine.ui.theme.*
 
 fun Modifier.bouncyClickable(
@@ -64,7 +72,7 @@ fun Modifier.bouncyClickable(
 
 @Composable
 fun TopHeader(
-    userName: String = "John Doe",
+    userName: String = "Arjun",
     onProfileClick: () -> Unit = {},
     onNotificationClick: () -> Unit = {}
 ) {
@@ -114,8 +122,8 @@ fun TopHeader(
         IconButton(
             onClick = onNotificationClick,
             modifier = Modifier
-                .background(Color.White, CircleShape)
                 .shadow(2.dp, CircleShape)
+                .background(Color.White, CircleShape)
         ) {
             Icon(Icons.Outlined.Notifications, contentDescription = "Notifications", tint = TextPrimaryLight)
         }
@@ -645,6 +653,49 @@ fun DiscoverGridCard(
                 fontWeight = FontWeight.Bold,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis
+            )
+        }
+    }
+}
+
+@Composable
+fun AnimatedWaveform(modifier: Modifier = Modifier, color: Color) {
+    val infiniteTransition = rememberInfiniteTransition(label = "waveform_transition")
+    val phase by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = 2f * Math.PI.toFloat(),
+        animationSpec = infiniteRepeatable(
+            animation = androidx.compose.animation.core.tween(4000, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ),
+        label = "phase_animation"
+    )
+
+    Canvas(modifier = modifier) {
+        val width = size.width
+        val height = size.height
+        val centerY = height / 2
+
+        // Draw multiple sine waves
+        for (i in 0..2) {
+            val path = Path()
+            // Make amplitude small and tight like the reference photo
+            val amplitude = 20f + (i * 10f)
+            val frequency = 1.5f + (i * 0.5f)
+            val phaseShift = phase * (if (i % 2 == 0) 1f else -1.2f) + (i * Math.PI.toFloat() / 3)
+
+            path.moveTo(0f, centerY)
+            // step by a small amount for smooth curve
+            for (x in 0..width.toInt() step 5) {
+                val normalizedX = x / width
+                val y = centerY + kotlin.math.sin((normalizedX * frequency * 2 * Math.PI) + phaseShift) * amplitude
+                path.lineTo(x.toFloat(), y.toFloat())
+            }
+            
+            drawPath(
+                path = path,
+                color = color.copy(alpha = 0.8f - (i * 0.25f)),
+                style = Stroke(width = 1f + (i * 0.3f))
             )
         }
     }

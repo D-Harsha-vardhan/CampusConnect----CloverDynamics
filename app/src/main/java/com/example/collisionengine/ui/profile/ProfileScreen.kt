@@ -124,7 +124,7 @@ fun ProfileScreen(
                     .padding(horizontal = 24.dp)
             ) {
                 Text(
-                    text = "John Doe",
+                    text = "Arjun",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
                     color = TextPrimaryLight
@@ -205,27 +205,105 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            StandardCard(
+            ActivityTimelineItem(
                 title = "Optimizing LLM Inference",
                 subtitle = "Published • 2 days ago",
+                icon = Icons.Filled.Edit,
                 tags = listOf("AI", "Machine Learning", "Research"),
-                isLiked = isLiked1,
-                onLikeClick = { isLiked1 = !isLiked1 },
-                onClick = { }
+                isLast = false
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            StandardCard(
+            ActivityTimelineItem(
                 title = "Software Eng Prep Group",
                 subtitle = "Joined • 1 week ago",
+                icon = Icons.Filled.Person,
                 tags = listOf("Mock Interviews", "Placement", "FAANG"),
-                isLiked = isLiked2,
-                onLikeClick = { isLiked2 = !isLiked2 },
-                onClick = { }
+                isLast = true
             )
 
             Spacer(modifier = Modifier.height(120.dp)) // Padding for bottom nav
+        }
+    }
+}
+
+@Composable
+fun ActivityTimelineItem(
+    title: String,
+    subtitle: String,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    tags: List<String>,
+    isLast: Boolean
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp)
+    ) {
+        // Timeline Column
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(top = 4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .shadow(4.dp, CircleShape, spotColor = PrimaryBlue.copy(alpha = 0.2f))
+                    .background(Color.White, CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(icon, contentDescription = null, tint = PrimaryBlue, modifier = Modifier.size(20.dp))
+            }
+            if (!isLast) {
+                Divider(
+                    color = PrimaryBlue.copy(alpha = 0.2f),
+                    modifier = Modifier
+                        .width(2.dp)
+                        .height(100.dp)
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.width(16.dp))
+
+        // Content Card
+        Card(
+            modifier = Modifier
+                .weight(1f)
+                .padding(bottom = if (isLast) 0.dp else 16.dp)
+                .shadow(4.dp, RoundedCornerShape(16.dp), spotColor = PrimaryBlue.copy(alpha = 0.1f)),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White)
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = TextPrimaryLight)
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(text = subtitle, style = MaterialTheme.typography.labelMedium, color = TextSecondaryLight)
+                Spacer(modifier = Modifier.height(12.dp))
+                @OptIn(ExperimentalLayoutApi::class)
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    tags.forEach { tag ->
+                        Surface(
+                            color = PrimaryBlue.copy(alpha = 0.05f),
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Text(
+                                text = tag,
+                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = PrimaryBlue,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }

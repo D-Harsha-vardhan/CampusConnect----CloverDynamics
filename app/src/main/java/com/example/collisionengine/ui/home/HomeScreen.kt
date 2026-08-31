@@ -10,6 +10,15 @@ import androidx.compose.material.icons.filled.Code
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.Group
 import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.Mic
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -36,7 +45,7 @@ fun HomeScreen(
         isVisible = true
     }
     
-    val categories = listOf("All Collisions", "Research", "Placement", "Events")
+    val categories = listOf("All Collisions", "Research", "Placement", "Campus Insights")
 
     Box(
         modifier = Modifier
@@ -113,7 +122,7 @@ fun HomeScreen(
                             QuickActionCard(icon = Icons.Filled.Code, label = "Prep", onClick = onNavigateToPlacement)
                         }
                         item {
-                            QuickActionCard(icon = Icons.Filled.Event, label = "Events", onClick = {})
+                            QuickActionCard(icon = Icons.Filled.Event, label = "Campus Insights", onClick = {})
                         }
                     }
                 }
@@ -121,71 +130,64 @@ fun HomeScreen(
             
             Spacer(modifier = Modifier.height(32.dp))
             
-            // 4. Category Tabs
+            // Custom AI Search Card
             androidx.compose.animation.AnimatedVisibility(
                 visible = isVisible,
                 enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300, delayMillis = 200)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300, delayMillis = 200))
             ) {
-                CategoryTabs(
-                    categories = categories,
-                    selectedCategory = selectedCategory,
-                    onCategorySelected = { selectedCategory = it }
-                )
-            }
-            
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            // 5. Featured Card
-            androidx.compose.animation.AnimatedVisibility(
-                visible = isVisible,
-                enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300, delayMillis = 300)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300, delayMillis = 300))
-            ) {
-                Column {
-                    Text(
-                        text = "Featured Collision",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = TextPrimaryLight,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(horizontal = 24.dp)
-                    )
-                    
-                    Spacer(modifier = Modifier.height(16.dp))
-                    
-                    FeaturedCard(
-                        title = "Research Collisions",
-                        subtitle = "Find people working on problems similar to yours.",
-                        tags = listOf("Machine Learning", "Remote", "Data"),
-                        onClick = onNavigateToResearch
-                    )
-                }
-            }
-            
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            // 6. Suggested Connections
-            androidx.compose.animation.AnimatedVisibility(
-                visible = isVisible,
-                enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300, delayMillis = 400)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300, delayMillis = 400))
-            ) {
-                Column {
-                    Text(
-                        text = "Suggested Connections",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = TextPrimaryLight,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(horizontal = 24.dp)
-                    )
-                    
-                    Spacer(modifier = Modifier.height(16.dp))
-                    
-                    StandardCard(
-                        title = "Placement Collisions",
-                        subtitle = "Find people who've been through the role you're preparing for.",
-                        tags = listOf("Software Eng", "Interview", "Mock"),
-                        isLiked = isPlacementLiked,
-                        onLikeClick = { isPlacementLiked = !isPlacementLiked },
-                        onClick = onNavigateToPlacement
-                    )
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 24.dp)
+                        .clickable { onNavigateToResearch() },
+                    shape = RoundedCornerShape(24.dp),
+                    colors = CardDefaults.cardColors(containerColor = PrimaryBlue)
+                ) {
+                    Box(
+                        modifier = Modifier.background(
+                            Brush.verticalGradient(colors = listOf(SecondaryBlue, PrimaryBlue))
+                        )
+                    ) {
+                        Column(modifier = Modifier.padding(24.dp)) {
+                            Text(
+                                text = "What are you trying to solve?",
+                                style = MaterialTheme.typography.headlineMedium,
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(24.dp))
+                            
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .background(Color.White.copy(alpha = 0.2f), RoundedCornerShape(20.dp))
+                                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                                contentAlignment = Alignment.CenterStart
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Icon(Icons.Outlined.Search, contentDescription = "Search", tint = Color.White)
+                                    Spacer(modifier = Modifier.width(12.dp))
+                                    Text(
+                                        text = "Describe your problem, project, or goal...",
+                                        color = Color.White.copy(alpha = 0.8f),
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                    Box(
+                                        modifier = Modifier
+                                            .size(36.dp)
+                                            .background(Color.White, CircleShape),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(Icons.Filled.Mic, contentDescription = "Mic", tint = PrimaryBlue, modifier = Modifier.size(20.dp))
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             

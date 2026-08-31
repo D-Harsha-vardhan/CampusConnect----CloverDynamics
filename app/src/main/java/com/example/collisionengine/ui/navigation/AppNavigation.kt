@@ -34,8 +34,14 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
         Screen.Messages.route,
         Screen.Profile.route
     )
+    
+    val backgroundColor = when (currentRoute) {
+        Screen.Placement.route -> androidx.compose.ui.graphics.Color(0xFF0F172A) // Dark
+        else -> com.example.collisionengine.ui.theme.BackgroundLight // Light
+    }
 
     Scaffold(
+        containerColor = backgroundColor,
         bottomBar = {
             if (showBottomNav) {
                 val navBarRoute = when (currentRoute) {
@@ -69,7 +75,7 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = if (showBottomNav) innerPadding.calculateBottomPadding() else 0.dp)
+                // Content extends behind the floating bottom bar
         ) {
             NavHost(
                 navController = navController,
