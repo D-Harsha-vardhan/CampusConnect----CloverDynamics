@@ -54,7 +54,7 @@ class MockCollisionRepository(private val context: Context) {
                 var score = 0
                 var matchReason = ""
                 
-                val allText = (student.skills + student.researchInterests + student.projects).joinToString(" ").lowercase()
+                val allText = "${student.skills} ${student.researchInterests} ${student.projects}".lowercase()
                 keywords.forEach { keyword ->
                     if (allText.contains(keyword)) score += 20
                 }
@@ -62,11 +62,11 @@ class MockCollisionRepository(private val context: Context) {
                 if (score > 0) {
                     val relatedProject = projects.find { it.studentId == student.studentId }
                     if (relatedProject != null) {
-                        val projText = (relatedProject.technologies + relatedProject.domain).joinToString(" ").lowercase()
+                        val projText = "${relatedProject.technologies} ${relatedProject.domain}".lowercase()
                         keywords.forEach { keyword -> if (projText.contains(keyword)) score += 30 }
-                        matchReason = "Built project: '${relatedProject.title}' using ${relatedProject.technologies.take(2).joinToString()}"
+                        matchReason = "Built project: '${relatedProject.title}' using ${relatedProject.technologies.split(",").take(2).joinToString(", ")}"
                     } else {
-                        matchReason = "Has skills in ${student.skills.take(3).joinToString()}"
+                        matchReason = "Has skills in ${student.skills.split(",").take(3).joinToString(", ")}"
                     }
                     matches.add(CollisionMatch(student.name, "Student (${student.year})", matchReason, score.coerceAtMost(99)))
                 }
@@ -75,12 +75,12 @@ class MockCollisionRepository(private val context: Context) {
             // Find faculty
             faculty.forEach { fac ->
                 var score = 0
-                val allText = (fac.researchInterests + fac.expertise).joinToString(" ").lowercase()
+                val allText = "${fac.researchInterests} ${fac.expertise}".lowercase()
                 keywords.forEach { keyword ->
                     if (allText.contains(keyword)) score += 35
                 }
                 if (score > 0) {
-                    matches.add(CollisionMatch(fac.name, "Faculty (${fac.department})", "Expertise in ${fac.expertise.take(2).joinToString()}", score.coerceAtMost(98)))
+                    matches.add(CollisionMatch(fac.name, "Faculty (${fac.department})", "Expertise in ${fac.expertise.split(",").take(2).joinToString(", ")}", score.coerceAtMost(98)))
                 }
             }
 
@@ -88,7 +88,7 @@ class MockCollisionRepository(private val context: Context) {
             // Find students who interviewed at companies or roles
             placements.forEach { placement ->
                 var score = 0
-                val allText = "${placement.company} ${placement.role} ${placement.skills.joinToString(" ")}".lowercase()
+                val allText = "${placement.company} ${placement.role} ${placement.skills}".lowercase()
                 keywords.forEach { keyword ->
                     if (allText.contains(keyword)) score += 40
                 }
@@ -101,6 +101,6 @@ class MockCollisionRepository(private val context: Context) {
             }
         }
         
-        return matches.sortedByDescending { it.score }
+        return matches.sortedByDescending { it.score }.take(10)
     }
 }

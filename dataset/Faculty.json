@@ -1,10 +1,442 @@
 [
   {
-    "faculty_id": "FAC001",
-    "name": "Dr. Aditi Verma",
-    "department": "CSE",
-    "research_interests": ["Computer Vision", "Robotics"],
-    "publications": ["Efficient Object Detection for Drones"],
-    "expertise": ["Deep Learning", "Edge Computing"]
+    "faculty_id": "F001",
+    "name": "Dr. Sameer Iyer",
+    "department": "Computer Science",
+    "research_interests": "Cybersecurity, Robotics, IoT Systems, Software Engineering",
+    "publications": "Elsevier Microelectronics Journal",
+    "expertise": "AI Accelerators, Autonomous Systems, Natural Language Processing, Neuromorphic Computing"
+  },
+  {
+    "faculty_id": "F002",
+    "name": "Dr. Anjali Verma",
+    "department": "Computer Science",
+    "research_interests": "Embedded Systems, Robotics",
+    "publications": "International Journal of Robotics Research; IEEE Transactions on VLSI Systems; IEEE Transactions on Circuits and Systems",
+    "expertise": "Augmented/Virtual Reality, 5G/6G Communication"
+  },
+  {
+    "faculty_id": "F003",
+    "name": "Dr. Akash Bansal",
+    "department": "Embedded Systems",
+    "research_interests": "Signal Processing, Neuromorphic Computing",
+    "publications": "Journal of Signal Processing Systems; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Database Systems, Renewable Energy Systems"
+  },
+  {
+    "faculty_id": "F004",
+    "name": "Dr. Arjun Menon",
+    "department": "VLSI Design",
+    "research_interests": "IoT Systems, Embedded Systems, Database Systems",
+    "publications": "ACM Computing Surveys; IEEE Sensors Journal",
+    "expertise": "Edge Computing, Wireless Networks, Hardware Security"
+  },
+  {
+    "faculty_id": "F005",
+    "name": "Dr. Yash Malhotra",
+    "department": "Information Technology",
+    "research_interests": "Software Engineering, Signal Processing",
+    "publications": "ACM Computing Surveys; IEEE Access; IEEE Sensors Journal",
+    "expertise": "Distributed Systems, Sensor Networks, 5G/6G Communication, Quantum Computing"
+  },
+  {
+    "faculty_id": "F006",
+    "name": "Dr. Ethan Liu",
+    "department": "Computer Engineering",
+    "research_interests": "Natural Language Processing, Computer Vision, Bioinformatics, Robotics",
+    "publications": "ACM Computing Surveys; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Hardware Security, Edge Computing"
+  },
+  {
+    "faculty_id": "F007",
+    "name": "Dr. Dev Kapoor",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Sensor Networks, Wireless Networks, VLSI & Chip Design, Embedded Systems",
+    "publications": "IEEE IoT Journal; IEEE Transactions on Computers; Elsevier Microelectronics Journal",
+    "expertise": "Natural Language Processing, Quantum Computing, 5G/6G Communication, VLSI & Chip Design"
+  },
+  {
+    "faculty_id": "F008",
+    "name": "Dr. Harsh Mehta",
+    "department": "Electronics & Communication",
+    "research_interests": "FPGA Acceleration, Cybersecurity, High Performance Computing",
+    "publications": "IEEE Transactions on Computers; IEEE Transactions on Circuits and Systems; Journal of Embedded Systems",
+    "expertise": "Cloud Computing, Sensor Networks, Database Systems, Computer Vision"
+  },
+  {
+    "faculty_id": "F009",
+    "name": "Dr. Rahul Verma",
+    "department": "VLSI Design",
+    "research_interests": "Cybersecurity, Natural Language Processing, Embedded Systems",
+    "publications": "IEEE Sensors Journal; IEEE Transactions on Computers; Springer Machine Learning Journal",
+    "expertise": "5G/6G Communication, Human-Computer Interaction"
+  },
+  {
+    "faculty_id": "F010",
+    "name": "Dr. Simran Desai",
+    "department": "Electronics & Communication",
+    "research_interests": "IoT Systems, Robotics, Software Engineering",
+    "publications": "IEEE Transactions on Circuits and Systems; IEEE IoT Journal; IEEE Transactions on Computers",
+    "expertise": "Low-Power Design, AI Accelerators, Neuromorphic Computing, FPGA Acceleration"
+  },
+  {
+    "faculty_id": "F011",
+    "name": "Dr. Tanvi Mehta",
+    "department": "Electronics & Communication",
+    "research_interests": "Human-Computer Interaction, Natural Language Processing, Database Systems, Computer Vision",
+    "publications": "IEEE Transactions on Neural Networks",
+    "expertise": "VLSI & Chip Design, Renewable Energy Systems, Bioinformatics, Low-Power Design"
+  },
+  {
+    "faculty_id": "F012",
+    "name": "Dr. Abhishek Gupta",
+    "department": "Embedded Systems",
+    "research_interests": "Quantum Computing, Signal Processing, Blockchain Systems",
+    "publications": "IEEE Transactions on Circuits and Systems; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Bioinformatics, Software Engineering"
+  },
+  {
+    "faculty_id": "F013",
+    "name": "Dr. Meera Bansal",
+    "department": "Information Technology",
+    "research_interests": "Cloud Computing, Edge Computing, Distributed Systems, Low-Power Design",
+    "publications": "ACM SIGCOMM",
+    "expertise": "Software Engineering, AI Accelerators"
+  },
+  {
+    "faculty_id": "F014",
+    "name": "Dr. Naveen Kapoor",
+    "department": "Electronics & Communication",
+    "research_interests": "High Performance Computing, Edge Computing, Hardware Security, 5G/6G Communication",
+    "publications": "ACM Transactions on Embedded Computing Systems; Elsevier Microelectronics Journal",
+    "expertise": "Quantum Computing, Embedded Systems, IoT Systems, Wireless Networks"
+  },
+  {
+    "faculty_id": "F015",
+    "name": "Dr. Rakesh Reddy",
+    "department": "Computer Science",
+    "research_interests": "Cloud Computing, Human-Computer Interaction, Machine Learning, Edge Computing",
+    "publications": "IEEE Sensors Journal; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Robotics, Computer Vision, AI Accelerators"
+  },
+  {
+    "faculty_id": "F016",
+    "name": "Dr. Varun Gupta",
+    "department": "Electrical Engineering",
+    "research_interests": "Human-Computer Interaction, Sensor Networks, Natural Language Processing, Database Systems",
+    "publications": "Journal of Signal Processing Systems; IEEE Transactions on Neural Networks; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Human-Computer Interaction, Autonomous Systems, VLSI & Chip Design, Cybersecurity"
+  },
+  {
+    "faculty_id": "F017",
+    "name": "Dr. Swati Malhotra",
+    "department": "Embedded Systems",
+    "research_interests": "High Performance Computing, Autonomous Systems",
+    "publications": "IEEE Transactions on Computers; Journal of Embedded Systems; IEEE Sensors Journal",
+    "expertise": "FPGA Acceleration, Bioinformatics, 5G/6G Communication"
+  },
+  {
+    "faculty_id": "F018",
+    "name": "Dr. Tanvi Desai",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Robotics, Natural Language Processing",
+    "publications": "IEEE Transactions on VLSI Systems; International Journal of Robotics Research",
+    "expertise": "Robotics, Neuromorphic Computing, Machine Learning, Natural Language Processing"
+  },
+  {
+    "faculty_id": "F019",
+    "name": "Dr. Bhavya Verma",
+    "department": "Computer Engineering",
+    "research_interests": "AI Accelerators, Computer Vision",
+    "publications": "ACM Computing Surveys; IEEE Transactions on Circuits and Systems",
+    "expertise": "Cybersecurity, Bioinformatics"
+  },
+  {
+    "faculty_id": "F020",
+    "name": "Dr. Pallavi Rao",
+    "department": "Electronics & Communication",
+    "research_interests": "High Performance Computing, AI Accelerators, Neuromorphic Computing, Human-Computer Interaction",
+    "publications": "Journal of Signal Processing Systems",
+    "expertise": "Renewable Energy Systems, Low-Power Design, Embedded Systems"
+  },
+  {
+    "faculty_id": "F021",
+    "name": "Dr. Kavya Iyer",
+    "department": "Embedded Systems",
+    "research_interests": "Low-Power Design, Signal Processing, Hardware Security",
+    "publications": "IEEE Transactions on VLSI Systems; Elsevier Microelectronics Journal; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Edge Computing, Computer Vision, FPGA Acceleration, Software Engineering"
+  },
+  {
+    "faculty_id": "F022",
+    "name": "Dr. Riya Iyer",
+    "department": "Computer Engineering",
+    "research_interests": "Embedded Systems, Autonomous Systems",
+    "publications": "IEEE Transactions on Neural Networks; IEEE Access",
+    "expertise": "Cybersecurity, Signal Processing"
+  },
+  {
+    "faculty_id": "F023",
+    "name": "Dr. Sneha Gupta",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Edge Computing, Computer Vision, 5G/6G Communication, Autonomous Systems",
+    "publications": "ACM Computing Surveys",
+    "expertise": "VLSI & Chip Design, Low-Power Design"
+  },
+  {
+    "faculty_id": "F024",
+    "name": "Dr. Pallavi Kulkarni",
+    "department": "Computer Engineering",
+    "research_interests": "AI Accelerators, Computer Vision, VLSI & Chip Design",
+    "publications": "IEEE Transactions on VLSI Systems; IEEE Access",
+    "expertise": "High Performance Computing, Renewable Energy Systems, Signal Processing"
+  },
+  {
+    "faculty_id": "F025",
+    "name": "Dr. Karan Menon",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Embedded Systems, Distributed Systems",
+    "publications": "IEEE Transactions on VLSI Systems",
+    "expertise": "Software Engineering, Autonomous Systems, Computer Vision, Cloud Computing"
+  },
+  {
+    "faculty_id": "F026",
+    "name": "Dr. Ananya Verma",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "High Performance Computing, Hardware Security, Blockchain Systems, VLSI & Chip Design",
+    "publications": "IEEE Transactions on Circuits and Systems",
+    "expertise": "Hardware Security, VLSI & Chip Design"
+  },
+  {
+    "faculty_id": "F027",
+    "name": "Dr. Diya Malhotra",
+    "department": "Electrical Engineering",
+    "research_interests": "Hardware Security, Robotics, FPGA Acceleration, Edge Computing",
+    "publications": "Journal of Embedded Systems; International Journal of Robotics Research; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Quantum Computing, Natural Language Processing"
+  },
+  {
+    "faculty_id": "F028",
+    "name": "Dr. Rajesh Chawla",
+    "department": "VLSI Design",
+    "research_interests": "Embedded Systems, Bioinformatics, Augmented/Virtual Reality",
+    "publications": "Journal of Embedded Systems; IEEE IoT Journal",
+    "expertise": "IoT Systems, Bioinformatics, 5G/6G Communication"
+  },
+  {
+    "faculty_id": "F029",
+    "name": "Dr. Neha Desai",
+    "department": "VLSI Design",
+    "research_interests": "Machine Learning, Signal Processing",
+    "publications": "International Journal of Robotics Research; ACM Computing Surveys; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Embedded Systems, Blockchain Systems, Cybersecurity, IoT Systems"
+  },
+  {
+    "faculty_id": "F030",
+    "name": "Dr. Grace Lin",
+    "department": "Electrical Engineering",
+    "research_interests": "Wireless Networks, Distributed Systems",
+    "publications": "ACM SIGCOMM",
+    "expertise": "Augmented/Virtual Reality, Distributed Systems, Quantum Computing, Renewable Energy Systems"
+  },
+  {
+    "faculty_id": "F031",
+    "name": "Dr. Ritika Agarwal",
+    "department": "Computer Science",
+    "research_interests": "Sensor Networks, Autonomous Systems, Distributed Systems, High Performance Computing",
+    "publications": "ACM Computing Surveys; IEEE Transactions on Neural Networks; IEEE IoT Journal",
+    "expertise": "AI Accelerators, Edge Computing"
+  },
+  {
+    "faculty_id": "F032",
+    "name": "Dr. Tanya Bansal",
+    "department": "Electronics & Communication",
+    "research_interests": "Distributed Systems, Quantum Computing, Embedded Systems",
+    "publications": "Springer Machine Learning Journal; Journal of Embedded Systems; Elsevier Microelectronics Journal",
+    "expertise": "Hardware Security, Cybersecurity, Blockchain Systems, Human-Computer Interaction"
+  },
+  {
+    "faculty_id": "F033",
+    "name": "Dr. Vikram Verma",
+    "department": "Electrical Engineering",
+    "research_interests": "Low-Power Design, Sensor Networks, Cybersecurity, Computer Vision",
+    "publications": "Springer Machine Learning Journal",
+    "expertise": "5G/6G Communication, Cybersecurity"
+  },
+  {
+    "faculty_id": "F034",
+    "name": "Dr. Arjun Desai",
+    "department": "Embedded Systems",
+    "research_interests": "Machine Learning, Edge Computing, Natural Language Processing, AI Accelerators",
+    "publications": "IEEE Sensors Journal; IEEE Transactions on Neural Networks; IEEE Transactions on Circuits and Systems",
+    "expertise": "Sensor Networks, Wireless Networks"
+  },
+  {
+    "faculty_id": "F035",
+    "name": "Dr. Isha Bansal",
+    "department": "Electronics & Communication",
+    "research_interests": "IoT Systems, Computer Vision, Distributed Systems",
+    "publications": "IEEE Sensors Journal; Journal of Signal Processing Systems",
+    "expertise": "AI Accelerators, Wireless Networks"
+  },
+  {
+    "faculty_id": "F036",
+    "name": "Dr. Nisha Mehta",
+    "department": "Electrical Engineering",
+    "research_interests": "Database Systems, Autonomous Systems, AI Accelerators",
+    "publications": "International Journal of Robotics Research; IEEE Transactions on Computers",
+    "expertise": "High Performance Computing, Robotics"
+  },
+  {
+    "faculty_id": "F037",
+    "name": "Dr. Olivia Zhao",
+    "department": "Electronics & Communication",
+    "research_interests": "Machine Learning, VLSI & Chip Design, Software Engineering",
+    "publications": "Journal of Signal Processing Systems; IEEE Access",
+    "expertise": "Hardware Security, Software Engineering, Renewable Energy Systems, Robotics"
+  },
+  {
+    "faculty_id": "F038",
+    "name": "Dr. Pooja Reddy",
+    "department": "Electrical Engineering",
+    "research_interests": "Hardware Security, Computer Vision, Human-Computer Interaction",
+    "publications": "Journal of Embedded Systems",
+    "expertise": "Wireless Networks, Distributed Systems, Sensor Networks"
+  },
+  {
+    "faculty_id": "F039",
+    "name": "Dr. Jason Lee",
+    "department": "Computer Engineering",
+    "research_interests": "Bioinformatics, Embedded Systems",
+    "publications": "Springer Machine Learning Journal; IEEE IoT Journal",
+    "expertise": "Database Systems, Cybersecurity"
+  },
+  {
+    "faculty_id": "F040",
+    "name": "Dr. Yash Agarwal",
+    "department": "Embedded Systems",
+    "research_interests": "Sensor Networks, Autonomous Systems, Cloud Computing, Machine Learning",
+    "publications": "IEEE Sensors Journal",
+    "expertise": "VLSI & Chip Design, Neuromorphic Computing, Cybersecurity"
+  },
+  {
+    "faculty_id": "F041",
+    "name": "Dr. Aditya Iyer",
+    "department": "Embedded Systems",
+    "research_interests": "Software Engineering, Renewable Energy Systems, Cloud Computing",
+    "publications": "International Journal of Robotics Research; IEEE Transactions on Circuits and Systems",
+    "expertise": "FPGA Acceleration, AI Accelerators"
+  },
+  {
+    "faculty_id": "F042",
+    "name": "Dr. Varun Rao",
+    "department": "Information Technology",
+    "research_interests": "Augmented/Virtual Reality, Low-Power Design",
+    "publications": "IEEE Transactions on Circuits and Systems",
+    "expertise": "Bioinformatics, Software Engineering, Embedded Systems, Wireless Networks"
+  },
+  {
+    "faculty_id": "F043",
+    "name": "Dr. Anjali Gupta",
+    "department": "VLSI Design",
+    "research_interests": "Cloud Computing, Bioinformatics, Hardware Security, Edge Computing",
+    "publications": "IEEE Sensors Journal; IEEE IoT Journal; IEEE Transactions on Circuits and Systems",
+    "expertise": "Bioinformatics, Low-Power Design, Cloud Computing"
+  },
+  {
+    "faculty_id": "F044",
+    "name": "Dr. Simran Joshi",
+    "department": "Electronics & Communication",
+    "research_interests": "Low-Power Design, Bioinformatics",
+    "publications": "Elsevier Microelectronics Journal; IEEE Transactions on Computers",
+    "expertise": "Quantum Computing, Neuromorphic Computing"
+  },
+  {
+    "faculty_id": "F045",
+    "name": "Dr. Neha Pillai",
+    "department": "Computer Science",
+    "research_interests": "Distributed Systems, Embedded Systems, Low-Power Design",
+    "publications": "International Journal of Robotics Research; Elsevier Microelectronics Journal; Springer Machine Learning Journal",
+    "expertise": "Signal Processing, Bioinformatics, Embedded Systems"
+  },
+  {
+    "faculty_id": "F046",
+    "name": "Dr. Nikhil Kulkarni",
+    "department": "Electronics & Communication",
+    "research_interests": "Natural Language Processing, Distributed Systems, Blockchain Systems, Bioinformatics",
+    "publications": "International Journal of Robotics Research; Springer Machine Learning Journal; ACM Computing Surveys",
+    "expertise": "Bioinformatics, Distributed Systems"
+  },
+  {
+    "faculty_id": "F047",
+    "name": "Dr. Rahul Rao",
+    "department": "Electronics & Communication",
+    "research_interests": "Computer Vision, Robotics",
+    "publications": "International Journal of Robotics Research; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Signal Processing, Low-Power Design"
+  },
+  {
+    "faculty_id": "F048",
+    "name": "Dr. Kabir Pillai",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Robotics, IoT Systems, 5G/6G Communication",
+    "publications": "IEEE Transactions on VLSI Systems; Journal of Signal Processing Systems; ACM Transactions on Embedded Computing Systems",
+    "expertise": "Database Systems, Low-Power Design"
+  },
+  {
+    "faculty_id": "F049",
+    "name": "Dr. Rahul Reddy",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Autonomous Systems, Robotics",
+    "publications": "ACM SIGCOMM",
+    "expertise": "Renewable Energy Systems, Signal Processing"
+  },
+  {
+    "faculty_id": "F050",
+    "name": "Dr. Gaurav Agarwal",
+    "department": "VLSI Design",
+    "research_interests": "Quantum Computing, Sensor Networks, Software Engineering",
+    "publications": "IEEE Access; ACM Transactions on Embedded Computing Systems; IEEE Transactions on Circuits and Systems",
+    "expertise": "AI Accelerators, VLSI & Chip Design, Software Engineering"
+  },
+  {
+    "faculty_id": "F051",
+    "name": "Dr. Manish Kapoor",
+    "department": "Computer Engineering",
+    "research_interests": "Cybersecurity, Database Systems, Blockchain Systems, Human-Computer Interaction",
+    "publications": "Journal of Embedded Systems; IEEE IoT Journal; ACM SIGCOMM",
+    "expertise": "Augmented/Virtual Reality, Distributed Systems"
+  },
+  {
+    "faculty_id": "F052",
+    "name": "Dr. Sneha Kapoor",
+    "department": "VLSI Design",
+    "research_interests": "AI Accelerators, Autonomous Systems, Natural Language Processing",
+    "publications": "IEEE Transactions on Neural Networks",
+    "expertise": "FPGA Acceleration, Augmented/Virtual Reality"
+  },
+  {
+    "faculty_id": "F053",
+    "name": "Dr. Sara Rao",
+    "department": "Electrical Engineering",
+    "research_interests": "Low-Power Design, Cloud Computing, Autonomous Systems",
+    "publications": "IEEE Access; IEEE Transactions on VLSI Systems",
+    "expertise": "Sensor Networks, Low-Power Design"
+  },
+  {
+    "faculty_id": "F054",
+    "name": "Dr. Dev Chawla",
+    "department": "Computer Science",
+    "research_interests": "FPGA Acceleration, Human-Computer Interaction, Machine Learning, Wireless Networks",
+    "publications": "Journal of Signal Processing Systems; IEEE Access",
+    "expertise": "Autonomous Systems, Software Engineering, Renewable Energy Systems"
+  },
+  {
+    "faculty_id": "F055",
+    "name": "Dr. Abhishek Mehta",
+    "department": "Artificial Intelligence & Data Science",
+    "research_interests": "Cybersecurity, Low-Power Design",
+    "publications": "IEEE Transactions on VLSI Systems; IEEE Access",
+    "expertise": "Bioinformatics, Renewable Energy Systems, FPGA Acceleration"
   }
 ]

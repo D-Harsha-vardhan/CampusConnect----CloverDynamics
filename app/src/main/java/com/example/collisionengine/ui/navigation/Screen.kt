@@ -22,4 +22,8 @@ sealed class Screen(val route: String) {
             return "conversation/${android.net.Uri.encode(name)}/${android.net.Uri.encode(reason)}"
         }
     }
+
+    object Chat : Screen("chat/{name}") {
+        fun createRoute(name: String) = "chat/${android.net.Uri.encode(name)}"
+    }
 }

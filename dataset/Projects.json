@@ -1,12 +1,652 @@
 [
   {
-    "project_id": "PRJ001",
-    "student_id": "STU001",
-    "title": "Optimizing YOLO on Raspberry Pi",
-    "description": "Real-time YOLO-based object detection on resource-constrained edge hardware.",
-    "technologies": ["YOLO", "Raspberry Pi", "Python", "TensorFlow Lite"],
-    "domain": "Computer Vision",
-    "methodology": "Quantization and pruning",
+    "project_id": "P001",
+    "student_id": "S043",
+    "title": "Data Pipeline for Real-Time Stock Analytics",
+    "description": "Developed a working prototype for 'Data Pipeline for Real-Time Stock Analytics' as part of coursework, applying waterfall model throughout the project lifecycle.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Waterfall Model",
+    "year": "2022"
+  },
+  {
+    "project_id": "P002",
+    "student_id": "S035",
+    "title": "Digital Signal Processor for Audio Filtering",
+    "description": "Research-oriented capstone project exploring 'Digital Signal Processor for Audio Filtering' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "RISC-V, Chisel, FPGA",
+    "domain": "Hardware",
+    "methodology": "Case Study Analysis",
+    "year": "2025"
+  },
+  {
+    "project_id": "P003",
+    "student_id": "S012",
+    "title": "Distributed File Storage System",
+    "description": "A software project focused on distributed file storage system, involving design, implementation, and testing using Kubernetes.",
+    "technologies": "Kubernetes, AWS, Terraform",
+    "domain": "Software",
+    "methodology": "Agile Development",
+    "year": "2024"
+  },
+  {
+    "project_id": "P004",
+    "student_id": "S003",
+    "title": "Sentiment Analysis Engine for Social Media",
+    "description": "Developed a working prototype for 'Sentiment Analysis Engine for Social Media' as part of coursework, applying iterative development throughout the project lifecycle.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2026"
+  },
+  {
+    "project_id": "P005",
+    "student_id": "S053",
+    "title": "Federated Learning Framework for Healthcare Data",
+    "description": "Developed a working prototype for 'Federated Learning Framework for Healthcare Data' as part of coursework, applying v-model throughout the project lifecycle.",
+    "technologies": "Python, TensorFlow, Flask",
+    "domain": "Software",
+    "methodology": "V-Model",
     "year": "2023"
+  },
+  {
+    "project_id": "P006",
+    "student_id": "S023",
+    "title": "Sentiment Analysis Engine for Social Media",
+    "description": "Developed a working prototype for 'Sentiment Analysis Engine for Social Media' as part of coursework, applying iterative development throughout the project lifecycle.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P007",
+    "student_id": "S028",
+    "title": "Fake News Detection using Deep Learning",
+    "description": "Developed a working prototype for 'Fake News Detection using Deep Learning' as part of coursework, applying experimental research throughout the project lifecycle.",
+    "technologies": "Python, Scikit-learn, Pandas",
+    "domain": "Software",
+    "methodology": "Experimental Research",
+    "year": "2023"
+  },
+  {
+    "project_id": "P008",
+    "student_id": "S045",
+    "title": "SoC Design for Edge AI Applications",
+    "description": "A hardware project focused on soc design for edge ai applications, involving design, implementation, and testing using Raspberry Pi.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "Design Thinking",
+    "year": "2025"
+  },
+  {
+    "project_id": "P009",
+    "student_id": "S028",
+    "title": "Chatbot for Campus Helpdesk using NLP",
+    "description": "A software project focused on chatbot for campus helpdesk using nlp, involving design, implementation, and testing using Solidity.",
+    "technologies": "Solidity, Ethereum, Web3.js",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2024"
+  },
+  {
+    "project_id": "P010",
+    "student_id": "S006",
+    "title": "PCB Design for Battery Management System",
+    "description": "Research-oriented capstone project exploring 'PCB Design for Battery Management System' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2026"
+  },
+  {
+    "project_id": "P011",
+    "student_id": "S028",
+    "title": "Drone Navigation using Sensor Fusion",
+    "description": "Research-oriented capstone project exploring 'Drone Navigation using Sensor Fusion' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "MATLAB, Simulink, DSP Kit",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2022"
+  },
+  {
+    "project_id": "P012",
+    "student_id": "S056",
+    "title": "Container Orchestration Optimizer",
+    "description": "A software project focused on container orchestration optimizer, involving design, implementation, and testing using Python.",
+    "technologies": "Python, Scikit-learn, Pandas",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P013",
+    "student_id": "S043",
+    "title": "Automated Code Review Tool using LLMs",
+    "description": "A software project focused on automated code review tool using llms, involving design, implementation, and testing using Solidity.",
+    "technologies": "Solidity, Ethereum, Web3.js",
+    "domain": "Software",
+    "methodology": "Case Study Analysis",
+    "year": "2023"
+  },
+  {
+    "project_id": "P014",
+    "student_id": "S010",
+    "title": "Fake News Detection using Deep Learning",
+    "description": "A software project focused on fake news detection using deep learning, involving design, implementation, and testing using Python.",
+    "technologies": "Python, TensorFlow, Flask",
+    "domain": "Software",
+    "methodology": "Waterfall Model",
+    "year": "2022"
+  },
+  {
+    "project_id": "P015",
+    "student_id": "S050",
+    "title": "Automated Code Review Tool using LLMs",
+    "description": "Research-oriented capstone project exploring 'Automated Code Review Tool using LLMs' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Python, Scikit-learn, Pandas",
+    "domain": "Software",
+    "methodology": "Test-Driven Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P016",
+    "student_id": "S010",
+    "title": "Automated Code Review Tool using LLMs",
+    "description": "Research-oriented capstone project exploring 'Automated Code Review Tool using LLMs' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2022"
+  },
+  {
+    "project_id": "P017",
+    "student_id": "S009",
+    "title": "Cloud-Native Microservices Monitoring Dashboard",
+    "description": "A software project focused on cloud-native microservices monitoring dashboard, involving design, implementation, and testing using JavaScript.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "V-Model",
+    "year": "2024"
+  },
+  {
+    "project_id": "P018",
+    "student_id": "S008",
+    "title": "Digital Signal Processor for Audio Filtering",
+    "description": "Research-oriented capstone project exploring 'Digital Signal Processor for Audio Filtering' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "RISC-V, Chisel, FPGA",
+    "domain": "Hardware",
+    "methodology": "CRISP-DM",
+    "year": "2025"
+  },
+  {
+    "project_id": "P019",
+    "student_id": "S008",
+    "title": "Hardware Accelerator for Neural Network Inference",
+    "description": "Developed a working prototype for 'Hardware Accelerator for Neural Network Inference' as part of coursework, applying rapid prototyping throughout the project lifecycle.",
+    "technologies": "RISC-V, Chisel, FPGA",
+    "domain": "Hardware",
+    "methodology": "Rapid Prototyping",
+    "year": "2026"
+  },
+  {
+    "project_id": "P020",
+    "student_id": "S045",
+    "title": "Traffic Prediction using Time Series Models",
+    "description": "A software project focused on traffic prediction using time series models, involving design, implementation, and testing using C++.",
+    "technologies": "C++, OpenCV, ROS",
+    "domain": "Software",
+    "methodology": "Design Thinking",
+    "year": "2023"
+  },
+  {
+    "project_id": "P021",
+    "student_id": "S029",
+    "title": "Drone Navigation using Sensor Fusion",
+    "description": "Research-oriented capstone project exploring 'Drone Navigation using Sensor Fusion' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Embedded C, Arduino, Sensors",
+    "domain": "Hardware",
+    "methodology": "V-Model",
+    "year": "2024"
+  },
+  {
+    "project_id": "P022",
+    "student_id": "S023",
+    "title": "Speech-to-Text Transcription Tool",
+    "description": "A software project focused on speech-to-text transcription tool, involving design, implementation, and testing using Solidity.",
+    "technologies": "Solidity, Ethereum, Web3.js",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2024"
+  },
+  {
+    "project_id": "P023",
+    "student_id": "S046",
+    "title": "Chatbot for Campus Helpdesk using NLP",
+    "description": "A software project focused on chatbot for campus helpdesk using nlp, involving design, implementation, and testing using JavaScript.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "CRISP-DM",
+    "year": "2023"
+  },
+  {
+    "project_id": "P024",
+    "student_id": "S013",
+    "title": "Serverless E-Commerce Backend",
+    "description": "Research-oriented capstone project exploring 'Serverless E-Commerce Backend' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Kubernetes, AWS, Terraform",
+    "domain": "Software",
+    "methodology": "Agile Development",
+    "year": "2024"
+  },
+  {
+    "project_id": "P025",
+    "student_id": "S037",
+    "title": "Wireless Sensor Network for Air Quality Monitoring",
+    "description": "A hardware project focused on wireless sensor network for air quality monitoring, involving design, implementation, and testing using VHDL.",
+    "technologies": "VHDL, ModelSim, FPGA",
+    "domain": "Hardware",
+    "methodology": "Test-Driven Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P026",
+    "student_id": "S020",
+    "title": "Voice-Controlled Smart Home Hub",
+    "description": "Research-oriented capstone project exploring 'Voice-Controlled Smart Home Hub' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Zigbee, MQTT, ESP32",
+    "domain": "Hardware",
+    "methodology": "Simulation-Based Validation",
+    "year": "2025"
+  },
+  {
+    "project_id": "P027",
+    "student_id": "S005",
+    "title": "Gesture-Controlled Robotic Arm",
+    "description": "Research-oriented capstone project exploring 'Gesture-Controlled Robotic Arm' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Embedded C, Arduino, Sensors",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2025"
+  },
+  {
+    "project_id": "P028",
+    "student_id": "S034",
+    "title": "Wireless Sensor Network for Air Quality Monitoring",
+    "description": "Developed a working prototype for 'Wireless Sensor Network for Air Quality Monitoring' as part of coursework, applying waterfall model throughout the project lifecycle.",
+    "technologies": "C, AVR Microcontroller, Proteus",
+    "domain": "Hardware",
+    "methodology": "Waterfall Model",
+    "year": "2023"
+  },
+  {
+    "project_id": "P029",
+    "student_id": "S033",
+    "title": "Sentiment Analysis Engine for Social Media",
+    "description": "Developed a working prototype for 'Sentiment Analysis Engine for Social Media' as part of coursework, applying crisp-dm throughout the project lifecycle.",
+    "technologies": "Java, Spring Boot, MySQL",
+    "domain": "Software",
+    "methodology": "CRISP-DM",
+    "year": "2023"
+  },
+  {
+    "project_id": "P030",
+    "student_id": "S011",
+    "title": "Solar-Powered Embedded Weather Station",
+    "description": "A hardware project focused on solar-powered embedded weather station, involving design, implementation, and testing using MATLAB.",
+    "technologies": "MATLAB, Simulink, DSP Kit",
+    "domain": "Hardware",
+    "methodology": "CRISP-DM",
+    "year": "2024"
+  },
+  {
+    "project_id": "P031",
+    "student_id": "S017",
+    "title": "Wireless Sensor Network for Air Quality Monitoring",
+    "description": "Research-oriented capstone project exploring 'Wireless Sensor Network for Air Quality Monitoring' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "Waterfall Model",
+    "year": "2024"
+  },
+  {
+    "project_id": "P032",
+    "student_id": "S035",
+    "title": "Digital Signal Processor for Audio Filtering",
+    "description": "A hardware project focused on digital signal processor for audio filtering, involving design, implementation, and testing using C.",
+    "technologies": "C, AVR Microcontroller, Proteus",
+    "domain": "Hardware",
+    "methodology": "Test-Driven Development",
+    "year": "2023"
+  },
+  {
+    "project_id": "P033",
+    "student_id": "S043",
+    "title": "Container Orchestration Optimizer",
+    "description": "A software project focused on container orchestration optimizer, involving design, implementation, and testing using JavaScript.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Test-Driven Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P034",
+    "student_id": "S006",
+    "title": "Fault-Tolerant Embedded Control System",
+    "description": "Research-oriented capstone project exploring 'Fault-Tolerant Embedded Control System' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "V-Model",
+    "year": "2023"
+  },
+  {
+    "project_id": "P035",
+    "student_id": "S027",
+    "title": "Real-Time Object Detection using YOLOv8",
+    "description": "Developed a working prototype for 'Real-Time Object Detection using YOLOv8' as part of coursework, applying v-model throughout the project lifecycle.",
+    "technologies": "Kubernetes, AWS, Terraform",
+    "domain": "Software",
+    "methodology": "V-Model",
+    "year": "2026"
+  },
+  {
+    "project_id": "P036",
+    "student_id": "S042",
+    "title": "Traffic Prediction using Time Series Models",
+    "description": "Developed a working prototype for 'Traffic Prediction using Time Series Models' as part of coursework, applying v-model throughout the project lifecycle.",
+    "technologies": "C++, OpenCV, ROS",
+    "domain": "Software",
+    "methodology": "V-Model",
+    "year": "2025"
+  },
+  {
+    "project_id": "P037",
+    "student_id": "S030",
+    "title": "Smart Irrigation System using IoT Sensors",
+    "description": "Developed a working prototype for 'Smart Irrigation System using IoT Sensors' as part of coursework, applying hardware-in-the-loop testing throughout the project lifecycle.",
+    "technologies": "VHDL, ModelSim, FPGA",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2025"
+  },
+  {
+    "project_id": "P038",
+    "student_id": "S030",
+    "title": "Antenna Design for 5G Communication",
+    "description": "Research-oriented capstone project exploring 'Antenna Design for 5G Communication' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "VHDL, ModelSim, FPGA",
+    "domain": "Hardware",
+    "methodology": "Experimental Research",
+    "year": "2024"
+  },
+  {
+    "project_id": "P039",
+    "student_id": "S056",
+    "title": "Smart Parking System using Ultrasonic Sensors",
+    "description": "Research-oriented capstone project exploring 'Smart Parking System using Ultrasonic Sensors' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "VHDL, ModelSim, FPGA",
+    "domain": "Hardware",
+    "methodology": "Experimental Research",
+    "year": "2026"
+  },
+  {
+    "project_id": "P040",
+    "student_id": "S007",
+    "title": "Drone Navigation using Sensor Fusion",
+    "description": "A hardware project focused on drone navigation using sensor fusion, involving design, implementation, and testing using Embedded C.",
+    "technologies": "Embedded C, Arduino, Sensors",
+    "domain": "Hardware",
+    "methodology": "Iterative Development",
+    "year": "2025"
+  },
+  {
+    "project_id": "P041",
+    "student_id": "S010",
+    "title": "PCB Design for Battery Management System",
+    "description": "A hardware project focused on pcb design for battery management system, involving design, implementation, and testing using PCB Design.",
+    "technologies": "PCB Design, Altium, SPICE",
+    "domain": "Hardware",
+    "methodology": "Test-Driven Development",
+    "year": "2025"
+  },
+  {
+    "project_id": "P042",
+    "student_id": "S056",
+    "title": "Recommendation System for E-Learning Platform",
+    "description": "A software project focused on recommendation system for e-learning platform, involving design, implementation, and testing using Python.",
+    "technologies": "Python, NLTK, spaCy",
+    "domain": "Software",
+    "methodology": "Case Study Analysis",
+    "year": "2024"
+  },
+  {
+    "project_id": "P043",
+    "student_id": "S049",
+    "title": "SoC Design for Edge AI Applications",
+    "description": "Developed a working prototype for 'SoC Design for Edge AI Applications' as part of coursework, applying hardware-in-the-loop testing throughout the project lifecycle.",
+    "technologies": "RISC-V, Chisel, FPGA",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2024"
+  },
+  {
+    "project_id": "P044",
+    "student_id": "S002",
+    "title": "Smart Parking System using Ultrasonic Sensors",
+    "description": "A hardware project focused on smart parking system using ultrasonic sensors, involving design, implementation, and testing using Zigbee.",
+    "technologies": "Zigbee, MQTT, ESP32",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2023"
+  },
+  {
+    "project_id": "P045",
+    "student_id": "S038",
+    "title": "Smart Irrigation System using IoT Sensors",
+    "description": "Research-oriented capstone project exploring 'Smart Irrigation System using IoT Sensors' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2026"
+  },
+  {
+    "project_id": "P046",
+    "student_id": "S044",
+    "title": "Wireless Sensor Network for Air Quality Monitoring",
+    "description": "A hardware project focused on wireless sensor network for air quality monitoring, involving design, implementation, and testing using Verilog.",
+    "technologies": "Verilog, Xilinx Vivado, FPGA",
+    "domain": "Hardware",
+    "methodology": "Design Thinking",
+    "year": "2025"
+  },
+  {
+    "project_id": "P047",
+    "student_id": "S057",
+    "title": "Real-Time ECG Monitoring using Embedded Systems",
+    "description": "Developed a working prototype for 'Real-Time ECG Monitoring using Embedded Systems' as part of coursework, applying experimental research throughout the project lifecycle.",
+    "technologies": "PCB Design, Altium, SPICE",
+    "domain": "Hardware",
+    "methodology": "Experimental Research",
+    "year": "2022"
+  },
+  {
+    "project_id": "P048",
+    "student_id": "S004",
+    "title": "Predictive Maintenance using Machine Learning",
+    "description": "A software project focused on predictive maintenance using machine learning, involving design, implementation, and testing using JavaScript.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "CRISP-DM",
+    "year": "2024"
+  },
+  {
+    "project_id": "P049",
+    "student_id": "S025",
+    "title": "Speech-to-Text Transcription Tool",
+    "description": "A software project focused on speech-to-text transcription tool, involving design, implementation, and testing using Python.",
+    "technologies": "Python, PyTorch, Docker",
+    "domain": "Software",
+    "methodology": "Test-Driven Development",
+    "year": "2026"
+  },
+  {
+    "project_id": "P050",
+    "student_id": "S009",
+    "title": "Cloud-Native Microservices Monitoring Dashboard",
+    "description": "Developed a working prototype for 'Cloud-Native Microservices Monitoring Dashboard' as part of coursework, applying experimental research throughout the project lifecycle.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Experimental Research",
+    "year": "2026"
+  },
+  {
+    "project_id": "P051",
+    "student_id": "S049",
+    "title": "Antenna Design for 5G Communication",
+    "description": "A hardware project focused on antenna design for 5g communication, involving design, implementation, and testing using Zigbee.",
+    "technologies": "Zigbee, MQTT, ESP32",
+    "domain": "Hardware",
+    "methodology": "Simulation-Based Validation",
+    "year": "2026"
+  },
+  {
+    "project_id": "P052",
+    "student_id": "S003",
+    "title": "Gesture-Controlled Robotic Arm",
+    "description": "A hardware project focused on gesture-controlled robotic arm, involving design, implementation, and testing using RISC-V.",
+    "technologies": "RISC-V, Chisel, FPGA",
+    "domain": "Hardware",
+    "methodology": "CRISP-DM",
+    "year": "2025"
+  },
+  {
+    "project_id": "P053",
+    "student_id": "S039",
+    "title": "Blockchain-Based Voting System",
+    "description": "A software project focused on blockchain-based voting system, involving design, implementation, and testing using JavaScript.",
+    "technologies": "JavaScript, Express, PostgreSQL",
+    "domain": "Software",
+    "methodology": "Test-Driven Development",
+    "year": "2024"
+  },
+  {
+    "project_id": "P054",
+    "student_id": "S026",
+    "title": "Anomaly Detection in Network Traffic",
+    "description": "Research-oriented capstone project exploring 'Anomaly Detection in Network Traffic' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Python, NLTK, spaCy",
+    "domain": "Software",
+    "methodology": "Experimental Research",
+    "year": "2026"
+  },
+  {
+    "project_id": "P055",
+    "student_id": "S035",
+    "title": "Fault-Tolerant Embedded Control System",
+    "description": "Developed a working prototype for 'Fault-Tolerant Embedded Control System' as part of coursework, applying hardware-in-the-loop testing throughout the project lifecycle.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "Hardware-in-the-Loop Testing",
+    "year": "2022"
+  },
+  {
+    "project_id": "P056",
+    "student_id": "S022",
+    "title": "Face Recognition Attendance System",
+    "description": "Research-oriented capstone project exploring 'Face Recognition Attendance System' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Python, NLTK, spaCy",
+    "domain": "Software",
+    "methodology": "Iterative Development",
+    "year": "2022"
+  },
+  {
+    "project_id": "P057",
+    "student_id": "S031",
+    "title": "Fault-Tolerant Embedded Control System",
+    "description": "Research-oriented capstone project exploring 'Fault-Tolerant Embedded Control System' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "C, AVR Microcontroller, Proteus",
+    "domain": "Hardware",
+    "methodology": "Rapid Prototyping",
+    "year": "2022"
+  },
+  {
+    "project_id": "P058",
+    "student_id": "S031",
+    "title": "Antenna Design for 5G Communication",
+    "description": "A hardware project focused on antenna design for 5g communication, involving design, implementation, and testing using PCB Design.",
+    "technologies": "PCB Design, Altium, SPICE",
+    "domain": "Hardware",
+    "methodology": "Waterfall Model",
+    "year": "2023"
+  },
+  {
+    "project_id": "P059",
+    "student_id": "S037",
+    "title": "AI-Powered Resume Screening Platform",
+    "description": "Developed a working prototype for 'AI-Powered Resume Screening Platform' as part of coursework, applying agile development throughout the project lifecycle.",
+    "technologies": "C++, OpenCV, ROS",
+    "domain": "Software",
+    "methodology": "Agile Development",
+    "year": "2025"
+  },
+  {
+    "project_id": "P060",
+    "student_id": "S027",
+    "title": "Home Automation System using Zigbee Protocol",
+    "description": "Developed a working prototype for 'Home Automation System using Zigbee Protocol' as part of coursework, applying crisp-dm throughout the project lifecycle.",
+    "technologies": "PCB Design, Altium, SPICE",
+    "domain": "Hardware",
+    "methodology": "CRISP-DM",
+    "year": "2026"
+  },
+  {
+    "project_id": "P061",
+    "student_id": "S056",
+    "title": "Sentiment Analysis Engine for Social Media",
+    "description": "Research-oriented capstone project exploring 'Sentiment Analysis Engine for Social Media' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "React, Node.js, MongoDB",
+    "domain": "Software",
+    "methodology": "CRISP-DM",
+    "year": "2023"
+  },
+  {
+    "project_id": "P062",
+    "student_id": "S021",
+    "title": "Traffic Prediction using Time Series Models",
+    "description": "A software project focused on traffic prediction using time series models, involving design, implementation, and testing using Solidity.",
+    "technologies": "Solidity, Ethereum, Web3.js",
+    "domain": "Software",
+    "methodology": "Simulation-Based Validation",
+    "year": "2024"
+  },
+  {
+    "project_id": "P063",
+    "student_id": "S030",
+    "title": "Recommendation System for E-Learning Platform",
+    "description": "Research-oriented capstone project exploring 'Recommendation System for E-Learning Platform' with emphasis on performance evaluation and real-world deployment.",
+    "technologies": "Solidity, Ethereum, Web3.js",
+    "domain": "Software",
+    "methodology": "Experimental Research",
+    "year": "2024"
+  },
+  {
+    "project_id": "P064",
+    "student_id": "S031",
+    "title": "Solar-Powered Embedded Weather Station",
+    "description": "A hardware project focused on solar-powered embedded weather station, involving design, implementation, and testing using Raspberry Pi.",
+    "technologies": "Raspberry Pi, Python, GPIO",
+    "domain": "Hardware",
+    "methodology": "CRISP-DM",
+    "year": "2024"
+  },
+  {
+    "project_id": "P065",
+    "student_id": "S020",
+    "title": "Predictive Maintenance using Machine Learning",
+    "description": "Developed a working prototype for 'Predictive Maintenance using Machine Learning' as part of coursework, applying experimental research throughout the project lifecycle.",
+    "technologies": "Kubernetes, AWS, Terraform",
+    "domain": "Software",
+    "methodology": "Experimental Research",
+    "year": "2025"
   }
 ]
