@@ -29,7 +29,8 @@ fun ConversationScreen(
     name: String,
     reason: String,
     viewModel: ConversationViewModel,
-    onNavigateBack: () -> Unit
+    onNavigateBack: () -> Unit,
+    onNavigateToChat: () -> Unit = {}
 ) {
     val message by viewModel.suggestedMessage.collectAsState()
     val context = LocalContext.current
@@ -132,7 +133,10 @@ fun ConversationScreen(
             // Connection Logic
             if (connectionState == "NONE") {
                 Button(
-                    onClick = { connectionState = "PENDING" },
+                    onClick = { 
+                        viewModel.sendMessageToSupabase()
+                        connectionState = "PENDING" 
+                    },
                     modifier = Modifier.fillMaxWidth().height(56.dp)
                 ) {
                     Icon(Icons.Default.Send, contentDescription = null)
@@ -155,7 +159,7 @@ fun ConversationScreen(
                 }
             } else if (connectionState == "ACCEPTED") {
                 Button(
-                    onClick = { /* TODO: Wire to Supabase Chat */ },
+                    onClick = onNavigateToChat,
                     modifier = Modifier.fillMaxWidth().height(56.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = androidx.compose.ui.graphics.Color(0xFF4CAF50))
                 ) {

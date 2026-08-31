@@ -1,12 +1,602 @@
 [
   {
-    "research_id": "RES001",
-    "person_id": "STU001",
-    "title": "Edge AI Inference Speed Optimization",
-    "abstract": "A study on improving FPS for object detection models on ARM-based microcomputers.",
-    "research_area": "Edge AI",
-    "methodologies": ["Model Quantization"],
-    "keywords": ["Edge AI", "Computer Vision", "YOLO"],
-    "publication": "None"
+    "research_id": "R001",
+    "person_id": "F051",
+    "title": "A Comparative Study of Software Engineering Approaches",
+    "abstract": "This study investigates the application of Software Engineering techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Software Engineering",
+    "methodologies": "Test-Driven Development",
+    "publication": "International Journal of Robotics Research",
+    "currently_working_on": "supervising and co-authoring paper on project 'Container Orchestration Optimizer' (Project ID: P012, Software)"
+  },
+  {
+    "research_id": "R002",
+    "person_id": "S046",
+    "title": "A Comparative Study of Natural Language Processing Approaches",
+    "abstract": "An empirical study on Natural Language Processing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Natural Language Processing",
+    "methodologies": "Iterative Development, Hardware-in-the-Loop Testing, Rapid Prototyping",
+    "publication": "IEEE Transactions on Circuits and Systems",
+    "currently_working_on": "drafting a paper based on project 'Chatbot for Campus Helpdesk using NLP' (Project ID: P023, Software)"
+  },
+  {
+    "research_id": "R003",
+    "person_id": "S040",
+    "title": "Towards Scalable Solutions in Software Engineering",
+    "abstract": "We propose a framework for Software Engineering that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Software Engineering",
+    "methodologies": "Agile Development",
+    "publication": "Journal of Embedded Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R004",
+    "person_id": "S046",
+    "title": "An Investigation into Human-Computer Interaction: Techniques and Applications",
+    "abstract": "We propose a framework for Human-Computer Interaction that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Human-Computer Interaction",
+    "methodologies": "CRISP-DM",
+    "publication": "Under Review",
+    "currently_working_on": "drafting a paper based on project 'Chatbot for Campus Helpdesk using NLP' (Project ID: P023, Software)"
+  },
+  {
+    "research_id": "R005",
+    "person_id": "F049",
+    "title": "A Comparative Study of Distributed Systems Approaches",
+    "abstract": "This study investigates the application of Distributed Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Distributed Systems",
+    "methodologies": "Agile Development, Design Thinking, Test-Driven Development",
+    "publication": "ACM Transactions on Embedded Computing Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Sentiment Analysis Engine for Social Media' (Project ID: P004, Software)"
+  },
+  {
+    "research_id": "R006",
+    "person_id": "F012",
+    "title": "An Investigation into High Performance Computing: Techniques and Applications",
+    "abstract": "An empirical study on High Performance Computing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "High Performance Computing",
+    "methodologies": "Waterfall Model, Iterative Development",
+    "publication": "Journal of Embedded Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R007",
+    "person_id": "F022",
+    "title": "Optimizing Distributed Systems for Real-World Deployment",
+    "abstract": "An empirical study on Distributed Systems exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Distributed Systems",
+    "methodologies": "CRISP-DM",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "supervising and co-authoring paper on project 'Speech-to-Text Transcription Tool' (Project ID: P022, Software)"
+  },
+  {
+    "research_id": "R008",
+    "person_id": "F042",
+    "title": "Advances in Cybersecurity for Next-Generation Systems",
+    "abstract": "This work presents a novel approach to Cybersecurity aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Cybersecurity",
+    "methodologies": "Experimental Research, Iterative Development, Test-Driven Development",
+    "publication": "ACM Transactions on Embedded Computing Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Gesture-Controlled Robotic Arm' (Project ID: P052, Hardware)"
+  },
+  {
+    "research_id": "R009",
+    "person_id": "S006",
+    "title": "An Investigation into FPGA Acceleration: Techniques and Applications",
+    "abstract": "We propose a framework for FPGA Acceleration that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "FPGA Acceleration",
+    "methodologies": "Hardware-in-the-Loop Testing",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "drafting a paper based on project 'Fault-Tolerant Embedded Control System' (Project ID: P034, Hardware)"
+  },
+  {
+    "research_id": "R010",
+    "person_id": "S018",
+    "title": "A Comparative Study of Cloud Computing Approaches",
+    "abstract": "This work presents a novel approach to Cloud Computing aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Cloud Computing",
+    "methodologies": "V-Model, Experimental Research",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R011",
+    "person_id": "S033",
+    "title": "A Comparative Study of High Performance Computing Approaches",
+    "abstract": "This work presents a novel approach to High Performance Computing aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "High Performance Computing",
+    "methodologies": "Iterative Development, Experimental Research, Test-Driven Development",
+    "publication": "IEEE IoT Journal",
+    "currently_working_on": "drafting a paper based on project 'Sentiment Analysis Engine for Social Media' (Project ID: P029, Software)"
+  },
+  {
+    "research_id": "R012",
+    "person_id": "S039",
+    "title": "Optimizing Wireless Networks for Real-World Deployment",
+    "abstract": "An empirical study on Wireless Networks exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Wireless Networks",
+    "methodologies": "V-Model, Rapid Prototyping, Case Study Analysis",
+    "publication": "IEEE Transactions on Neural Networks",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R013",
+    "person_id": "F008",
+    "title": "Towards Scalable Solutions in Computer Vision",
+    "abstract": "We propose a framework for Computer Vision that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Computer Vision",
+    "methodologies": "CRISP-DM, Waterfall Model, V-Model",
+    "publication": "Under Review",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R014",
+    "person_id": "S033",
+    "title": "An Investigation into Signal Processing: Techniques and Applications",
+    "abstract": "An empirical study on Signal Processing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Signal Processing",
+    "methodologies": "CRISP-DM",
+    "publication": "IEEE Sensors Journal",
+    "currently_working_on": "drafting a paper based on project 'Sentiment Analysis Engine for Social Media' (Project ID: P029, Software)"
+  },
+  {
+    "research_id": "R015",
+    "person_id": "F020",
+    "title": "An Investigation into Software Engineering: Techniques and Applications",
+    "abstract": "An empirical study on Software Engineering exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Software Engineering",
+    "methodologies": "Agile Development, Rapid Prototyping",
+    "publication": "ACM Computing Surveys",
+    "currently_working_on": "supervising and co-authoring paper on project 'SoC Design for Edge AI Applications' (Project ID: P043, Hardware)"
+  },
+  {
+    "research_id": "R016",
+    "person_id": "F005",
+    "title": "Optimizing High Performance Computing for Real-World Deployment",
+    "abstract": "This work presents a novel approach to High Performance Computing aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "High Performance Computing",
+    "methodologies": "Simulation-Based Validation, Waterfall Model",
+    "publication": "Journal of Signal Processing Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Cloud-Native Microservices Monitoring Dashboard' (Project ID: P050, Software)"
+  },
+  {
+    "research_id": "R017",
+    "person_id": "S059",
+    "title": "Optimizing High Performance Computing for Real-World Deployment",
+    "abstract": "An empirical study on High Performance Computing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "High Performance Computing",
+    "methodologies": "V-Model",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R018",
+    "person_id": "F026",
+    "title": "Advances in Blockchain Systems for Next-Generation Systems",
+    "abstract": "We propose a framework for Blockchain Systems that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Blockchain Systems",
+    "methodologies": "Agile Development",
+    "publication": "Journal of Signal Processing Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'PCB Design for Battery Management System' (Project ID: P010, Hardware)"
+  },
+  {
+    "research_id": "R019",
+    "person_id": "F016",
+    "title": "A Comparative Study of Signal Processing Approaches",
+    "abstract": "We propose a framework for Signal Processing that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Signal Processing",
+    "methodologies": "Rapid Prototyping, Design Thinking",
+    "publication": "IEEE Transactions on VLSI Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Fault-Tolerant Embedded Control System' (Project ID: P034, Hardware)"
+  },
+  {
+    "research_id": "R020",
+    "person_id": "S005",
+    "title": "Towards Scalable Solutions in Edge Computing",
+    "abstract": "This work presents a novel approach to Edge Computing aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Edge Computing",
+    "methodologies": "Test-Driven Development, V-Model",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "drafting a paper based on project 'Gesture-Controlled Robotic Arm' (Project ID: P027, Hardware)"
+  },
+  {
+    "research_id": "R021",
+    "person_id": "S049",
+    "title": "An Investigation into Hardware Security: Techniques and Applications",
+    "abstract": "We propose a framework for Hardware Security that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Hardware Security",
+    "methodologies": "Iterative Development, Rapid Prototyping, Test-Driven Development",
+    "publication": "International Journal of Robotics Research",
+    "currently_working_on": "drafting a paper based on project 'SoC Design for Edge AI Applications' (Project ID: P043, Hardware)"
+  },
+  {
+    "research_id": "R022",
+    "person_id": "F043",
+    "title": "Advances in Blockchain Systems for Next-Generation Systems",
+    "abstract": "An empirical study on Blockchain Systems exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Blockchain Systems",
+    "methodologies": "Iterative Development, Agile Development",
+    "publication": "Under Review",
+    "currently_working_on": "supervising and co-authoring paper on project 'Automated Code Review Tool using LLMs' (Project ID: P016, Software)"
+  },
+  {
+    "research_id": "R023",
+    "person_id": "S023",
+    "title": "Optimizing 5G/6G Communication for Real-World Deployment",
+    "abstract": "This study investigates the application of 5G/6G Communication techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "5G/6G Communication",
+    "methodologies": "Simulation-Based Validation, Case Study Analysis, Waterfall Model",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "drafting a paper based on project 'Sentiment Analysis Engine for Social Media' (Project ID: P006, Software)"
+  },
+  {
+    "research_id": "R024",
+    "person_id": "F020",
+    "title": "Advances in Hardware Security for Next-Generation Systems",
+    "abstract": "An empirical study on Hardware Security exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Hardware Security",
+    "methodologies": "CRISP-DM",
+    "publication": "Journal of Signal Processing Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Automated Code Review Tool using LLMs' (Project ID: P015, Software)"
+  },
+  {
+    "research_id": "R025",
+    "person_id": "S014",
+    "title": "An Investigation into Cloud Computing: Techniques and Applications",
+    "abstract": "An empirical study on Cloud Computing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Cloud Computing",
+    "methodologies": "Design Thinking, CRISP-DM",
+    "publication": "ACM Computing Surveys",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R026",
+    "person_id": "F013",
+    "title": "Towards Scalable Solutions in Renewable Energy Systems",
+    "abstract": "We propose a framework for Renewable Energy Systems that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Renewable Energy Systems",
+    "methodologies": "Rapid Prototyping, Experimental Research",
+    "publication": "Under Review",
+    "currently_working_on": "supervising and co-authoring paper on project 'Wireless Sensor Network for Air Quality Monitoring' (Project ID: P046, Hardware)"
+  },
+  {
+    "research_id": "R027",
+    "person_id": "F045",
+    "title": "Advances in Quantum Computing for Next-Generation Systems",
+    "abstract": "An empirical study on Quantum Computing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Quantum Computing",
+    "methodologies": "CRISP-DM",
+    "publication": "IEEE Transactions on Computers",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R028",
+    "person_id": "S024",
+    "title": "Optimizing Blockchain Systems for Real-World Deployment",
+    "abstract": "An empirical study on Blockchain Systems exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Blockchain Systems",
+    "methodologies": "Case Study Analysis",
+    "publication": "ACM Computing Surveys",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R029",
+    "person_id": "F015",
+    "title": "Advances in Software Engineering for Next-Generation Systems",
+    "abstract": "This work presents a novel approach to Software Engineering aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Software Engineering",
+    "methodologies": "CRISP-DM, Test-Driven Development",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "supervising and co-authoring paper on project 'Blockchain-Based Voting System' (Project ID: P053, Software)"
+  },
+  {
+    "research_id": "R030",
+    "person_id": "S054",
+    "title": "Optimizing Robotics for Real-World Deployment",
+    "abstract": "This study investigates the application of Robotics techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Robotics",
+    "methodologies": "Hardware-in-the-Loop Testing, V-Model",
+    "publication": "Under Review",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R031",
+    "person_id": "S057",
+    "title": "An Investigation into Autonomous Systems: Techniques and Applications",
+    "abstract": "This work presents a novel approach to Autonomous Systems aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Autonomous Systems",
+    "methodologies": "V-Model",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "drafting a paper based on project 'Real-Time ECG Monitoring using Embedded Systems' (Project ID: P047, Hardware)"
+  },
+  {
+    "research_id": "R032",
+    "person_id": "S010",
+    "title": "Advances in Machine Learning for Next-Generation Systems",
+    "abstract": "An empirical study on Machine Learning exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Machine Learning",
+    "methodologies": "Agile Development, Test-Driven Development",
+    "publication": "IEEE Transactions on VLSI Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R033",
+    "person_id": "S027",
+    "title": "An Investigation into Machine Learning: Techniques and Applications",
+    "abstract": "This study investigates the application of Machine Learning techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Machine Learning",
+    "methodologies": "Iterative Development, Agile Development, CRISP-DM",
+    "publication": "IEEE IoT Journal",
+    "currently_working_on": "drafting a paper based on project 'Real-Time Object Detection using YOLOv8' (Project ID: P035, Software)"
+  },
+  {
+    "research_id": "R034",
+    "person_id": "S040",
+    "title": "A Comparative Study of Blockchain Systems Approaches",
+    "abstract": "This study investigates the application of Blockchain Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Blockchain Systems",
+    "methodologies": "Simulation-Based Validation, Design Thinking",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R035",
+    "person_id": "S053",
+    "title": "An Investigation into Hardware Security: Techniques and Applications",
+    "abstract": "This work presents a novel approach to Hardware Security aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Hardware Security",
+    "methodologies": "Simulation-Based Validation",
+    "publication": "IEEE Transactions on VLSI Systems",
+    "currently_working_on": "drafting a paper based on project 'Federated Learning Framework for Healthcare Data' (Project ID: P005, Software)"
+  },
+  {
+    "research_id": "R036",
+    "person_id": "F006",
+    "title": "Optimizing Human-Computer Interaction for Real-World Deployment",
+    "abstract": "This study investigates the application of Human-Computer Interaction techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Human-Computer Interaction",
+    "methodologies": "Design Thinking, CRISP-DM, Agile Development",
+    "publication": "IEEE Transactions on Circuits and Systems",
+    "currently_working_on": "supervising and co-authoring paper on project 'Real-Time Object Detection using YOLOv8' (Project ID: P035, Software)"
+  },
+  {
+    "research_id": "R037",
+    "person_id": "S005",
+    "title": "A Comparative Study of Bioinformatics Approaches",
+    "abstract": "This work presents a novel approach to Bioinformatics aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Bioinformatics",
+    "methodologies": "Experimental Research",
+    "publication": "Journal of Signal Processing Systems",
+    "currently_working_on": "drafting a paper based on project 'Gesture-Controlled Robotic Arm' (Project ID: P027, Hardware)"
+  },
+  {
+    "research_id": "R038",
+    "person_id": "F020",
+    "title": "Towards Scalable Solutions in VLSI & Chip Design",
+    "abstract": "We propose a framework for VLSI & Chip Design that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "VLSI & Chip Design",
+    "methodologies": "Simulation-Based Validation, V-Model, CRISP-DM",
+    "publication": "IEEE Transactions on Computers",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R039",
+    "person_id": "S028",
+    "title": "An Investigation into Robotics: Techniques and Applications",
+    "abstract": "This study investigates the application of Robotics techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Robotics",
+    "methodologies": "Test-Driven Development, Case Study Analysis, Simulation-Based Validation",
+    "publication": "Under Review",
+    "currently_working_on": "drafting a paper based on project 'Drone Navigation using Sensor Fusion' (Project ID: P011, Hardware)"
+  },
+  {
+    "research_id": "R040",
+    "person_id": "S036",
+    "title": "Optimizing FPGA Acceleration for Real-World Deployment",
+    "abstract": "We propose a framework for FPGA Acceleration that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "FPGA Acceleration",
+    "methodologies": "Test-Driven Development, V-Model, Simulation-Based Validation",
+    "publication": "IEEE Transactions on Neural Networks",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R041",
+    "person_id": "S010",
+    "title": "Advances in FPGA Acceleration for Next-Generation Systems",
+    "abstract": "An empirical study on FPGA Acceleration exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "FPGA Acceleration",
+    "methodologies": "Experimental Research, Design Thinking",
+    "publication": "IEEE Transactions on Computers",
+    "currently_working_on": "drafting a paper based on project 'Automated Code Review Tool using LLMs' (Project ID: P016, Software)"
+  },
+  {
+    "research_id": "R042",
+    "person_id": "F007",
+    "title": "An Investigation into IoT Systems: Techniques and Applications",
+    "abstract": "We propose a framework for IoT Systems that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "IoT Systems",
+    "methodologies": "Hardware-in-the-Loop Testing, CRISP-DM",
+    "publication": "IEEE Transactions on Computers",
+    "currently_working_on": "supervising and co-authoring paper on project 'Antenna Design for 5G Communication' (Project ID: P058, Hardware)"
+  },
+  {
+    "research_id": "R043",
+    "person_id": "F039",
+    "title": "A Comparative Study of Quantum Computing Approaches",
+    "abstract": "An empirical study on Quantum Computing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Quantum Computing",
+    "methodologies": "Iterative Development",
+    "publication": "Preprint (arXiv)",
+    "currently_working_on": "supervising and co-authoring paper on project 'Federated Learning Framework for Healthcare Data' (Project ID: P005, Software)"
+  },
+  {
+    "research_id": "R044",
+    "person_id": "S025",
+    "title": "Advances in VLSI & Chip Design for Next-Generation Systems",
+    "abstract": "This study investigates the application of VLSI & Chip Design techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "VLSI & Chip Design",
+    "methodologies": "Iterative Development, Hardware-in-the-Loop Testing",
+    "publication": "IEEE Transactions on Circuits and Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R045",
+    "person_id": "S031",
+    "title": "An Investigation into Renewable Energy Systems: Techniques and Applications",
+    "abstract": "This study investigates the application of Renewable Energy Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Renewable Energy Systems",
+    "methodologies": "Rapid Prototyping, V-Model",
+    "publication": "Journal of Embedded Systems",
+    "currently_working_on": "drafting a paper based on project 'Antenna Design for 5G Communication' (Project ID: P058, Hardware)"
+  },
+  {
+    "research_id": "R046",
+    "person_id": "S001",
+    "title": "A Comparative Study of FPGA Acceleration Approaches",
+    "abstract": "An empirical study on FPGA Acceleration exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "FPGA Acceleration",
+    "methodologies": "Hardware-in-the-Loop Testing, Experimental Research",
+    "publication": "Elsevier Microelectronics Journal",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R047",
+    "person_id": "F045",
+    "title": "Optimizing Embedded Systems for Real-World Deployment",
+    "abstract": "This study investigates the application of Embedded Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Embedded Systems",
+    "methodologies": "Simulation-Based Validation",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "supervising and co-authoring paper on project 'Home Automation System using Zigbee Protocol' (Project ID: P060, Hardware)"
+  },
+  {
+    "research_id": "R048",
+    "person_id": "S018",
+    "title": "Optimizing Sensor Networks for Real-World Deployment",
+    "abstract": "This study investigates the application of Sensor Networks techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Sensor Networks",
+    "methodologies": "Test-Driven Development",
+    "publication": "IEEE Transactions on VLSI Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R049",
+    "person_id": "F030",
+    "title": "Advances in Augmented/Virtual Reality for Next-Generation Systems",
+    "abstract": "An empirical study on Augmented/Virtual Reality exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Augmented/Virtual Reality",
+    "methodologies": "Case Study Analysis, Design Thinking",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "supervising and co-authoring paper on project 'Blockchain-Based Voting System' (Project ID: P053, Software)"
+  },
+  {
+    "research_id": "R050",
+    "person_id": "S010",
+    "title": "Optimizing Augmented/Virtual Reality for Real-World Deployment",
+    "abstract": "An empirical study on Augmented/Virtual Reality exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Augmented/Virtual Reality",
+    "methodologies": "Hardware-in-the-Loop Testing",
+    "publication": "ACM Transactions on Embedded Computing Systems",
+    "currently_working_on": "drafting a paper based on project 'Fake News Detection using Deep Learning' (Project ID: P014, Software)"
+  },
+  {
+    "research_id": "R051",
+    "person_id": "S051",
+    "title": "Towards Scalable Solutions in Wireless Networks",
+    "abstract": "This work presents a novel approach to Wireless Networks aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Wireless Networks",
+    "methodologies": "Rapid Prototyping",
+    "publication": "Journal of Signal Processing Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R052",
+    "person_id": "F022",
+    "title": "Optimizing Renewable Energy Systems for Real-World Deployment",
+    "abstract": "This work presents a novel approach to Renewable Energy Systems aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Renewable Energy Systems",
+    "methodologies": "Design Thinking",
+    "publication": "ACM SIGCOMM",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R053",
+    "person_id": "S026",
+    "title": "Towards Scalable Solutions in Signal Processing",
+    "abstract": "We propose a framework for Signal Processing that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "Signal Processing",
+    "methodologies": "Agile Development, Hardware-in-the-Loop Testing",
+    "publication": "Journal of Embedded Systems",
+    "currently_working_on": "drafting a paper based on project 'Anomaly Detection in Network Traffic' (Project ID: P054, Software)"
+  },
+  {
+    "research_id": "R054",
+    "person_id": "F047",
+    "title": "A Comparative Study of IoT Systems Approaches",
+    "abstract": "This study investigates the application of IoT Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "IoT Systems",
+    "methodologies": "Hardware-in-the-Loop Testing, Rapid Prototyping",
+    "publication": "IEEE Sensors Journal",
+    "currently_working_on": "supervising and co-authoring paper on project 'Wireless Sensor Network for Air Quality Monitoring' (Project ID: P028, Hardware)"
+  },
+  {
+    "research_id": "R055",
+    "person_id": "S020",
+    "title": "An Investigation into Computer Vision: Techniques and Applications",
+    "abstract": "This work presents a novel approach to Computer Vision aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Computer Vision",
+    "methodologies": "V-Model, Design Thinking",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "drafting a paper based on project 'Predictive Maintenance using Machine Learning' (Project ID: P065, Software)"
+  },
+  {
+    "research_id": "R056",
+    "person_id": "S028",
+    "title": "Advances in Signal Processing for Next-Generation Systems",
+    "abstract": "An empirical study on Signal Processing exploring design trade-offs, implementation challenges, and performance benchmarks across multiple test scenarios.",
+    "research_area": "Signal Processing",
+    "methodologies": "Waterfall Model, Case Study Analysis, Simulation-Based Validation",
+    "publication": "ACM Transactions on Embedded Computing Systems",
+    "currently_working_on": "drafting a paper based on project 'Chatbot for Campus Helpdesk using NLP' (Project ID: P009, Software)"
+  },
+  {
+    "research_id": "R057",
+    "person_id": "S046",
+    "title": "Advances in Embedded Systems for Next-Generation Systems",
+    "abstract": "This study investigates the application of Embedded Systems techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Embedded Systems",
+    "methodologies": "Design Thinking, Test-Driven Development, Case Study Analysis",
+    "publication": "Journal of Embedded Systems",
+    "currently_working_on": "Not currently working on a paper"
+  },
+  {
+    "research_id": "R058",
+    "person_id": "S056",
+    "title": "Towards Scalable Solutions in Human-Computer Interaction",
+    "abstract": "This study investigates the application of Human-Computer Interaction techniques to solve practical engineering challenges, offering a comparative analysis with state-of-the-art solutions.",
+    "research_area": "Human-Computer Interaction",
+    "methodologies": "Simulation-Based Validation, Test-Driven Development, Case Study Analysis",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "drafting a paper based on project 'Sentiment Analysis Engine for Social Media' (Project ID: P061, Software)"
+  },
+  {
+    "research_id": "R059",
+    "person_id": "F046",
+    "title": "A Comparative Study of Renewable Energy Systems Approaches",
+    "abstract": "This work presents a novel approach to Renewable Energy Systems aimed at improving efficiency and scalability in real-world deployments. Experimental results demonstrate significant improvements over existing baseline methods.",
+    "research_area": "Renewable Energy Systems",
+    "methodologies": "Waterfall Model, Experimental Research, Design Thinking",
+    "publication": "IEEE Transactions on Computers",
+    "currently_working_on": "supervising and co-authoring paper on project 'Drone Navigation using Sensor Fusion' (Project ID: P011, Hardware)"
+  },
+  {
+    "research_id": "R060",
+    "person_id": "F033",
+    "title": "Optimizing FPGA Acceleration for Real-World Deployment",
+    "abstract": "We propose a framework for FPGA Acceleration that addresses key limitations in current systems, including latency, power consumption, and accuracy trade-offs. The proposed method is validated through extensive simulations.",
+    "research_area": "FPGA Acceleration",
+    "methodologies": "Simulation-Based Validation, Case Study Analysis, Waterfall Model",
+    "publication": "Springer Machine Learning Journal",
+    "currently_working_on": "supervising and co-authoring paper on project 'Cloud-Native Microservices Monitoring Dashboard' (Project ID: P017, Software)"
   }
 ]

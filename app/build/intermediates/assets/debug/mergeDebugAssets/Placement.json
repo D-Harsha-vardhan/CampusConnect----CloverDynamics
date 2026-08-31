@@ -1,12 +1,552 @@
 [
   {
-    "placement_id": "PLC001",
-    "student_id": "STU001",
-    "company": "Microsoft",
-    "role": "Software Engineer",
-    "skills": ["System Design", "DSA", "Backend"],
-    "interview_topics": ["Distributed Systems", "Graph Algorithms"],
-    "outcome": "Offer Received",
+    "placement_id": "PL001",
+    "student_id": "S032",
+    "company": "Applied Materials",
+    "role": "DevOps Engineer",
+    "skills": "Machine Learning, C++, Data Structures & Algorithms",
+    "interview_topics": "Coding Round (DSA), Circuit Design, RTOS Concepts",
+    "outcome": "Placed",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL002",
+    "student_id": "S019",
+    "company": "Texas Instruments",
+    "role": "DevOps Engineer",
+    "skills": "Git, Robotics, Power Electronics",
+    "interview_topics": "Coding Round (DSA), Circuit Design, Cloud Fundamentals, Signal Processing",
+    "outcome": "Offer Declined",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL003",
+    "student_id": "S009",
+    "company": "Cadence Design Systems",
+    "role": "Firmware Engineer",
+    "skills": "Wireless Communication, Git, Robotics",
+    "interview_topics": "Coding Round (DSA), Microprocessors",
+    "outcome": "Internship Converted to PPO",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL004",
+    "student_id": "S012",
+    "company": "ARM Holdings",
+    "role": "Firmware Engineer",
+    "skills": "Raspberry Pi, Flask, Digital Signal Processing, Django",
+    "interview_topics": "Computer Networks, Digital Electronics, Behavioral Interview, Circuit Design",
+    "outcome": "Offer Declined",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL005",
+    "student_id": "S021",
+    "company": "Bosch",
+    "role": "Test & Validation Engineer",
+    "skills": "Docker, MATLAB/Simulink, REST APIs, Kubernetes, Raspberry Pi",
+    "interview_topics": "DBMS, Behavioral Interview, Circuit Design",
+    "outcome": "Offer Declined",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL006",
+    "student_id": "S054",
+    "company": "Google",
+    "role": "FPGA Developer",
+    "skills": "Django, SPICE Simulation, Cybersecurity, Microservices, Data Structures & Algorithms",
+    "interview_topics": "Digital Electronics, OOP Concepts",
+    "outcome": "In Process",
     "year": "2024"
+  },
+  {
+    "placement_id": "PL007",
+    "student_id": "S029",
+    "company": "Siemens",
+    "role": "Product Engineer",
+    "skills": "Cloud Computing, VHDL, Deep Learning, Microcontrollers (AVR/PIC)",
+    "interview_topics": "Digital Electronics, Coding Round (DSA)",
+    "outcome": "Offer Declined",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL008",
+    "student_id": "S040",
+    "company": "Qualcomm",
+    "role": "DevOps Engineer",
+    "skills": "CI/CD, Git, Blockchain, Wireless Communication, VHDL",
+    "interview_topics": "Machine Learning Basics, Circuit Design, Operating Systems",
+    "outcome": "Internship Converted to PPO",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL009",
+    "student_id": "S004",
+    "company": "Synopsys",
+    "role": "Firmware Engineer",
+    "skills": "Semiconductor Fabrication, VHDL, CMOS Design, NLP, RISC-V",
+    "interview_topics": "System Design, Cloud Fundamentals",
+    "outcome": "Offer Declined",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL010",
+    "student_id": "S023",
+    "company": "Texas Instruments",
+    "role": "Product Engineer",
+    "skills": "Data Structures & Algorithms, Cloud Computing, Python",
+    "interview_topics": "OOP Concepts, Coding Round (DSA), Digital Electronics",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL011",
+    "student_id": "S001",
+    "company": "Bosch",
+    "role": "Hardware Design Engineer",
+    "skills": "Distributed Systems, GraphQL, Node.js, SoC Design, Analog Circuit Design",
+    "interview_topics": "System Design, OOP Concepts",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL012",
+    "student_id": "S060",
+    "company": "Infosys",
+    "role": "Systems Engineer",
+    "skills": "Raspberry Pi, TensorFlow, Python",
+    "interview_topics": "Cloud Fundamentals, System Design",
+    "outcome": "Not Placed",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL013",
+    "student_id": "S058",
+    "company": "Samsung",
+    "role": "Research Intern",
+    "skills": "Data Structures & Algorithms, Python, MATLAB/Simulink, NLP, Wireless Communication",
+    "interview_topics": "Circuit Design, Coding Round (DSA)",
+    "outcome": "Not Placed",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL014",
+    "student_id": "S013",
+    "company": "Qualcomm",
+    "role": "Data Scientist",
+    "skills": "Node.js, Arduino, Robotics, TensorFlow",
+    "interview_topics": "Machine Learning Basics, VLSI Fundamentals",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL015",
+    "student_id": "S025",
+    "company": "Broadcom",
+    "role": "DevOps Engineer",
+    "skills": "Analog Circuit Design, RISC-V, Kubernetes",
+    "interview_topics": "Data Structures & Algorithms, Signal Processing",
+    "outcome": "Not Placed",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL016",
+    "student_id": "S036",
+    "company": "Analog Devices",
+    "role": "Backend Developer",
+    "skills": "SPICE Simulation, Power Electronics, Kubernetes",
+    "interview_topics": "RTOS Concepts, Circuit Design, Computer Networks",
+    "outcome": "Placed",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL017",
+    "student_id": "S033",
+    "company": "Google",
+    "role": "DevOps Engineer",
+    "skills": "Microcontrollers (AVR/PIC), Arduino, Microservices",
+    "interview_topics": "Circuit Design, VLSI Fundamentals, Behavioral Interview",
+    "outcome": "Not Placed",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL018",
+    "student_id": "S042",
+    "company": "Bosch",
+    "role": "Systems Engineer",
+    "skills": "REST APIs, PCB Design, RTOS",
+    "interview_topics": "Signal Processing, Behavioral Interview, Coding Round (DSA), Data Structures & Algorithms",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL019",
+    "student_id": "S049",
+    "company": "Micron Technology",
+    "role": "FPGA Developer",
+    "skills": "AWS, Power Electronics, CI/CD, Flask, Analog Circuit Design",
+    "interview_topics": "DBMS, Cloud Fundamentals",
+    "outcome": "Offer Declined",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL020",
+    "student_id": "S027",
+    "company": "Samsung",
+    "role": "Cloud Engineer",
+    "skills": "RTOS, React, Embedded C, Python, Distributed Systems",
+    "interview_topics": "Operating Systems, OOP Concepts, Circuit Design",
+    "outcome": "In Process",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL021",
+    "student_id": "S043",
+    "company": "Analog Devices",
+    "role": "Research Intern",
+    "skills": "MongoDB, Sensor Integration, Verilog, Signal Integrity Analysis, React",
+    "interview_topics": "Digital Electronics, Data Structures & Algorithms",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL022",
+    "student_id": "S041",
+    "company": "NVIDIA",
+    "role": "Product Engineer",
+    "skills": "CMOS Design, CI/CD, FPGA Design",
+    "interview_topics": "Circuit Design, OOP Concepts, Coding Round (DSA)",
+    "outcome": "Offer Declined",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL023",
+    "student_id": "S055",
+    "company": "Applied Materials",
+    "role": "Research Intern",
+    "skills": "IoT Protocols (MQTT/Zigbee), Kubernetes, Django, Node.js, Machine Learning",
+    "interview_topics": "OOP Concepts, Behavioral Interview",
+    "outcome": "Not Placed",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL024",
+    "student_id": "S053",
+    "company": "IBM",
+    "role": "Embedded Software Engineer",
+    "skills": "SPICE Simulation, Sensor Integration, Antenna Design, Analog Circuit Design, RISC-V",
+    "interview_topics": "Digital Electronics, Operating Systems, Coding Round (DSA), OOP Concepts",
+    "outcome": "Not Placed",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL025",
+    "student_id": "S011",
+    "company": "Samsung",
+    "role": "Hardware Design Engineer",
+    "skills": "PyTorch, Cloud Computing, IoT Protocols (MQTT/Zigbee), RTOS",
+    "interview_topics": "Signal Processing, Machine Learning Basics",
+    "outcome": "Not Placed",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL026",
+    "student_id": "S006",
+    "company": "Intel",
+    "role": "Backend Developer",
+    "skills": "MATLAB/Simulink, Python, SQL",
+    "interview_topics": "Coding Round (DSA), Microprocessors, RTOS Concepts",
+    "outcome": "Internship Converted to PPO",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL027",
+    "student_id": "S002",
+    "company": "Analog Devices",
+    "role": "Firmware Engineer",
+    "skills": "Signal Integrity Analysis, Django, Arduino, PyTorch, Java",
+    "interview_topics": "Circuit Design, Operating Systems, Microprocessors",
+    "outcome": "Placed",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL028",
+    "student_id": "S015",
+    "company": "Siemens",
+    "role": "FPGA Developer",
+    "skills": "React, VHDL, Cloud Computing, FPGA Design, Distributed Systems",
+    "interview_topics": "Cloud Fundamentals, Circuit Design",
+    "outcome": "In Process",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL029",
+    "student_id": "S059",
+    "company": "Analog Devices",
+    "role": "Firmware Engineer",
+    "skills": "Signal Integrity Analysis, TensorFlow, Digital Signal Processing, RISC-V",
+    "interview_topics": "Computer Networks, Cloud Fundamentals, Coding Round (DSA), Microprocessors",
+    "outcome": "Placed",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL030",
+    "student_id": "S034",
+    "company": "Intel",
+    "role": "Data Scientist",
+    "skills": "Verilog, Distributed Systems, Microservices",
+    "interview_topics": "VLSI Fundamentals, RTOS Concepts",
+    "outcome": "Placed",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL031",
+    "student_id": "S048",
+    "company": "Adobe",
+    "role": "Product Engineer",
+    "skills": "Power Electronics, Analog Circuit Design, Cybersecurity, Linux, Deep Learning",
+    "interview_topics": "Circuit Design, RTOS Concepts",
+    "outcome": "Internship Converted to PPO",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL032",
+    "student_id": "S008",
+    "company": "Qualcomm",
+    "role": "FPGA Developer",
+    "skills": "PyTorch, FPGA Design, RISC-V, JavaScript",
+    "interview_topics": "DBMS, Behavioral Interview",
+    "outcome": "In Process",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL033",
+    "student_id": "S018",
+    "company": "Broadcom",
+    "role": "Hardware Design Engineer",
+    "skills": "Flask, Signal Integrity Analysis, Semiconductor Fabrication, Machine Learning",
+    "interview_topics": "Digital Electronics, Microprocessors, DBMS",
+    "outcome": "Placed",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL034",
+    "student_id": "S010",
+    "company": "Amazon",
+    "role": "ML Engineer",
+    "skills": "CMOS Design, Machine Learning, Power Electronics, IoT Protocols (MQTT/Zigbee), REST APIs",
+    "interview_topics": "Coding Round (DSA), Signal Processing, DBMS",
+    "outcome": "Not Placed",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL035",
+    "student_id": "S035",
+    "company": "Uber",
+    "role": "DevOps Engineer",
+    "skills": "Kubernetes, Python, Cybersecurity",
+    "interview_topics": "DBMS, Microprocessors",
+    "outcome": "Internship Converted to PPO",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL036",
+    "student_id": "S046",
+    "company": "IBM",
+    "role": "Software Engineer Intern",
+    "skills": "Microservices, Semiconductor Fabrication, Power Electronics, Arduino, Machine Learning",
+    "interview_topics": "OOP Concepts, Microprocessors",
+    "outcome": "Not Placed",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL037",
+    "student_id": "S044",
+    "company": "Wipro",
+    "role": "Software Engineer Intern",
+    "skills": "Raspberry Pi, Django, Node.js",
+    "interview_topics": "DBMS, RTOS Concepts",
+    "outcome": "In Process",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL038",
+    "student_id": "S037",
+    "company": "Siemens",
+    "role": "Product Engineer",
+    "skills": "Cloud Computing, Power Electronics, Node.js, Microcontrollers (AVR/PIC)",
+    "interview_topics": "Operating Systems, Machine Learning Basics",
+    "outcome": "Offer Declined",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL039",
+    "student_id": "S016",
+    "company": "Synopsys",
+    "role": "FPGA Developer",
+    "skills": "Blockchain, SoC Design, Docker",
+    "interview_topics": "Signal Processing, Operating Systems",
+    "outcome": "Internship Converted to PPO",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL040",
+    "student_id": "S028",
+    "company": "Siemens",
+    "role": "Test & Validation Engineer",
+    "skills": "Deep Learning, Data Structures & Algorithms, Django, Linux, React",
+    "interview_topics": "Operating Systems, Behavioral Interview",
+    "outcome": "In Process",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL041",
+    "student_id": "S017",
+    "company": "Google",
+    "role": "Hardware Design Engineer",
+    "skills": "Data Structures & Algorithms, Cloud Computing, Deep Learning",
+    "interview_topics": "Computer Networks, Microprocessors, VLSI Fundamentals",
+    "outcome": "Not Placed",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL042",
+    "student_id": "S052",
+    "company": "Cisco",
+    "role": "Cloud Engineer",
+    "skills": "Semiconductor Fabrication, PyTorch, Node.js, SQL",
+    "interview_topics": "Signal Processing, Circuit Design, Coding Round (DSA), RTOS Concepts",
+    "outcome": "In Process",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL043",
+    "student_id": "S051",
+    "company": "Amazon",
+    "role": "Test & Validation Engineer",
+    "skills": "Kubernetes, Node.js, Raspberry Pi, REST APIs",
+    "interview_topics": "Behavioral Interview, Microprocessors, Data Structures & Algorithms",
+    "outcome": "Internship Converted to PPO",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL044",
+    "student_id": "S030",
+    "company": "Microsoft",
+    "role": "Software Engineer Intern",
+    "skills": "Semiconductor Fabrication, Data Structures & Algorithms, PCB Design, Power Electronics",
+    "interview_topics": "DBMS, System Design, Cloud Fundamentals, RTOS Concepts",
+    "outcome": "Not Placed",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL045",
+    "student_id": "S057",
+    "company": "Intel",
+    "role": "Software Engineer Intern",
+    "skills": "Docker, AWS, Wireless Communication",
+    "interview_topics": "Coding Round (DSA), Machine Learning Basics, RTOS Concepts",
+    "outcome": "Placed",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL046",
+    "student_id": "S020",
+    "company": "Synopsys",
+    "role": "ML Engineer",
+    "skills": "Java, React, AWS",
+    "interview_topics": "RTOS Concepts, Behavioral Interview, Digital Electronics, System Design",
+    "outcome": "Internship Converted to PPO",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL047",
+    "student_id": "S014",
+    "company": "NVIDIA",
+    "role": "Cloud Engineer",
+    "skills": "SQL, Digital Signal Processing, Blockchain",
+    "interview_topics": "Behavioral Interview, DBMS, Data Structures & Algorithms, OOP Concepts",
+    "outcome": "Offer Declined",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL048",
+    "student_id": "S047",
+    "company": "Analog Devices",
+    "role": "Data Scientist",
+    "skills": "Django, Data Structures & Algorithms, Kubernetes",
+    "interview_topics": "DBMS, Machine Learning Basics",
+    "outcome": "Internship Converted to PPO",
+    "year": "2025"
+  },
+  {
+    "placement_id": "PL049",
+    "student_id": "S050",
+    "company": "Infosys",
+    "role": "Product Engineer",
+    "skills": "Verilog, JavaScript, Node.js, Django, Microservices",
+    "interview_topics": "Circuit Design, Computer Networks",
+    "outcome": "In Process",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL050",
+    "student_id": "S038",
+    "company": "Applied Materials",
+    "role": "DevOps Engineer",
+    "skills": "CMOS Design, Java, Microservices, Raspberry Pi, Computer Vision",
+    "interview_topics": "Cloud Fundamentals, VLSI Fundamentals, Signal Processing",
+    "outcome": "In Process",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL051",
+    "student_id": "S024",
+    "company": "Broadcom",
+    "role": "ML Engineer",
+    "skills": "Java, Deep Learning, RTOS",
+    "interview_topics": "Data Structures & Algorithms, RTOS Concepts",
+    "outcome": "Internship Converted to PPO",
+    "year": "2022"
+  },
+  {
+    "placement_id": "PL052",
+    "student_id": "S056",
+    "company": "Adobe",
+    "role": "Cloud Engineer",
+    "skills": "Computer Vision, Signal Integrity Analysis, Microcontrollers (AVR/PIC), Linux, SQL",
+    "interview_topics": "DBMS, Machine Learning Basics",
+    "outcome": "Not Placed",
+    "year": "2024"
+  },
+  {
+    "placement_id": "PL053",
+    "student_id": "S007",
+    "company": "ARM Holdings",
+    "role": "Test & Validation Engineer",
+    "skills": "JavaScript, Sensor Integration, Linux, Digital Signal Processing, Semiconductor Fabrication",
+    "interview_topics": "Coding Round (DSA), RTOS Concepts, Circuit Design",
+    "outcome": "Not Placed",
+    "year": "2023"
+  },
+  {
+    "placement_id": "PL054",
+    "student_id": "S022",
+    "company": "Samsung",
+    "role": "FPGA Developer",
+    "skills": "Robotics, Power Electronics, MATLAB/Simulink, Computer Vision",
+    "interview_topics": "Data Structures & Algorithms, Coding Round (DSA), RTOS Concepts, VLSI Fundamentals",
+    "outcome": "In Process",
+    "year": "2026"
+  },
+  {
+    "placement_id": "PL055",
+    "student_id": "S026",
+    "company": "Google",
+    "role": "FPGA Developer",
+    "skills": "Antenna Design, Robotics, VHDL",
+    "interview_topics": "Signal Processing, Digital Electronics, DBMS, Data Structures & Algorithms",
+    "outcome": "Placed",
+    "year": "2022"
   }
 ]

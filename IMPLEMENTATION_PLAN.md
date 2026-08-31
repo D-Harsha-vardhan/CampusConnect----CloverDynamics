@@ -15,15 +15,21 @@ graph TD
 ```
 
 ### Phase 2: Remote / Production Architecture (Phases 11 - 20)
-Later, we will transition the mock repository to a real backend connected to Databricks.
+For the hackathon, we will connect the Android App directly to the Databricks Genie API using Retrofit to save time and reduce architectural complexity. We also rely on Supabase for real-time chat.
+
 ```mermaid
 graph TD
     UI[Android UI] --> VM[ViewModels]
+    
+    %% Main Collision Flow
     VM --> Repo[RemoteCollisionRepository]
     Repo --> API[Retrofit REST Client]
-    API --> Backend[HTTPS Backend Service]
-    Backend --> Databricks[Databricks Gold Tables]
-    Databricks --> Genie[Databricks Genie AI]
+    API --> Genie[Databricks Genie API]
+    Genie --> DB[Databricks Space/Data]
+    
+    %% Chat Flow
+    VM --> SupabaseClient[Supabase Realtime Client]
+    SupabaseClient --> SupabaseDB[(Supabase PostgreSQL)]
 ```
 
 ## 3. Data Strategy

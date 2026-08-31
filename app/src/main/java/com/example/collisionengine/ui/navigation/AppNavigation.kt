@@ -116,15 +116,24 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
                 androidx.navigation.navArgument("reason") { type = androidx.navigation.NavType.StringType }
             )
         ) { backStackEntry ->
-            val name = backStackEntry.arguments?.getString("name") ?: ""
-            val reason = backStackEntry.arguments?.getString("reason") ?: ""
-            
+            val name = backStackEntry.arguments?.getString("name") ?: "Unknown"
+            val reason = backStackEntry.arguments?.getString("reason") ?: "Unknown reason"
             val viewModel: com.example.collisionengine.ui.conversation.ConversationViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
-            
             com.example.collisionengine.ui.conversation.ConversationScreen(
                 name = name,
                 reason = reason,
                 viewModel = viewModel,
+                onNavigateBack = { navController.popBackStack() },
+                onNavigateToChat = { navController.navigate(Screen.Chat.createRoute(name)) }
+            )
+        }
+        composable(
+            route = Screen.Chat.route,
+            arguments = listOf(androidx.navigation.navArgument("name") { type = androidx.navigation.NavType.StringType })
+        ) { backStackEntry ->
+            val name = backStackEntry.arguments?.getString("name") ?: "Unknown"
+            com.example.collisionengine.ui.chat.ChatScreen(
+                name = name,
                 onNavigateBack = { navController.popBackStack() }
             )
         }
