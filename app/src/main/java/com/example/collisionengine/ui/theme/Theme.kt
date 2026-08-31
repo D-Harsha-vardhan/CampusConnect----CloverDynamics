@@ -33,7 +33,7 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun CollisionEngineTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false, // Force light theme for the new airy design
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme

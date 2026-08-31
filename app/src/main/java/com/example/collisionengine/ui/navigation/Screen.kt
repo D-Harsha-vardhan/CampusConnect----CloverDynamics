@@ -26,4 +26,10 @@ sealed class Screen(val route: String) {
     object Chat : Screen("chat/{name}") {
         fun createRoute(name: String) = "chat/${android.net.Uri.encode(name)}"
     }
+    
+    // New requested screens
+    object Messages : Screen("messages")
+    object Profile : Screen("profile")
+    object Notifications : Screen("notifications")
+    object AddPaper : Screen("add_paper")
 }
