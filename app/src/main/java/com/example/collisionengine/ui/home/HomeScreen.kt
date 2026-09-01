@@ -122,7 +122,7 @@ fun HomeScreen(
                             QuickActionCard(icon = Icons.Filled.Code, label = "Prep", onClick = onNavigateToPlacement)
                         }
                         item {
-                            QuickActionCard(icon = Icons.Filled.Event, label = "Campus Insights", onClick = {})
+                            QuickActionCard(icon = Icons.Filled.Event, label = "Insights", onClick = {})
                         }
                     }
                 }
