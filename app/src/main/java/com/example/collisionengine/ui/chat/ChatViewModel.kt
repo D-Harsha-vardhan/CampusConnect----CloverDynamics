@@ -35,9 +35,7 @@ class ChatViewModel : ViewModel() {
             try {
                 val fetchedMessages = SupabaseClient.client.from("messages")
                     .select {
-                        filter {
-                            // In a real app: eq("connection_id", mockConnectionId)
-                        }
+                        // In a real app: eq("connection_id", mockConnectionId)
                     }
                     .decodeList<ChatMessage>()
                 

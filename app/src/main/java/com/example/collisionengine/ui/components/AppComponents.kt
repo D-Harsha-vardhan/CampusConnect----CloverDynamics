@@ -29,6 +29,8 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.animation.core.LinearEasing
@@ -145,7 +147,7 @@ fun SearchBar(
             .padding(horizontal = 24.dp)
             .shadow(4.dp, RoundedCornerShape(30.dp)),
         placeholder = {
-            Text("Search for research papers...", color = TextSecondaryLight)
+            Text("Search for people to connect...", color = TextSecondaryLight)
         },
         leadingIcon = {
             Icon(Icons.Outlined.Search, contentDescription = "Search", tint = TextSecondaryLight)
@@ -704,8 +706,7 @@ fun AnimatedWaveform(modifier: Modifier = Modifier, color: Color) {
 @Composable
 fun ChatBubble(
     message: String,
-    isUser: Boolean,
-    showTopMatchMock: Boolean = false
+    isUser: Boolean
 ) {
     Column(
         modifier = Modifier
@@ -725,7 +726,7 @@ fun ChatBubble(
         
         Box(
             modifier = Modifier
-                .fillMaxWidth(if (showTopMatchMock) 1f else 0.85f)
+                .widthIn(max = 320.dp)
                 .background(
                     color = if (isUser) PrimaryBlue else Color(0xFFF0F4F8),
                     shape = RoundedCornerShape(
@@ -737,22 +738,119 @@ fun ChatBubble(
                 )
                 .padding(12.dp)
         ) {
-            if (showTopMatchMock) {
-                Column {
-                    Text(
-                        text = message,
-                        color = TextPrimaryLight,
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                    Spacer(modifier = Modifier.height(16.dp))
-                    TopMatchCard()
+            Text(
+                text = message,
+                color = if (isUser) Color.White else TextPrimaryLight,
+                style = MaterialTheme.typography.bodyMedium
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun ProfileMatchCard(
+    match: com.example.collisionengine.data.model.ProfileMatch,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() },
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(modifier = Modifier.padding(20.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier
+                            .size(50.dp)
+                            .background(PrimaryBlue.copy(alpha = 0.1f), CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = match.name.firstOrNull()?.toString() ?: "U",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = PrimaryBlue,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column {
+                        Text(
+                            text = match.name,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = TextPrimaryLight
+                        )
+                        Text(
+                            text = match.role,
+                            style = MaterialTheme.typography.labelMedium,
+                            color = TextSecondaryLight
+                        )
+                    }
                 }
-            } else {
-                Text(
-                    text = message,
-                    color = if (isUser) Color.White else TextPrimaryLight,
-                    style = MaterialTheme.typography.bodyMedium
-                )
+                
+                Icon(Icons.Outlined.ChevronRight, contentDescription = "View Profile", tint = TextSecondaryLight)
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Text(
+                text = match.matchReasonTitle,
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = TextPrimaryLight
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = match.matchReasonText,
+                style = MaterialTheme.typography.bodySmall,
+                color = TextSecondaryLight,
+                maxLines = 3,
+                overflow = TextOverflow.Ellipsis
+            )
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                match.tags.take(3).forEach { tag ->
+                    Surface(
+                        color = Color.White,
+                        shape = RoundedCornerShape(8.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, Color.LightGray.copy(alpha = 0.5f))
+                    ) {
+                        Text(
+                            text = tag,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextPrimaryLight
+                        )
+                    }
+                }
+                if (match.tags.size > 3) {
+                    Surface(
+                        color = Color.White,
+                        shape = RoundedCornerShape(8.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, Color.LightGray.copy(alpha = 0.5f))
+                    ) {
+                        Text(
+                            text = "+${match.tags.size - 3}",
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextPrimaryLight
+                        )
+                    }
+                }
             }
         }
     }
@@ -760,173 +858,116 @@ fun ChatBubble(
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun TopMatchCard() {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "Top Matches (1)",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-                color = TextPrimaryLight
-            )
-            Text(
-                text = "Sorted by AI Relevance",
-                style = MaterialTheme.typography.labelSmall,
-                color = TextSecondaryLight
-            )
-        }
-        
-        Spacer(modifier = Modifier.height(8.dp))
-        
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.White),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-        ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
+fun ResearchPaperPost(
+    authorName: String,
+    timeAgo: String,
+    title: String,
+    description: String,
+    tags: List<String>
+) {
+    var isLiked by remember { mutableStateOf(false) }
+    var isSaved by remember { mutableStateOf(false) }
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp, vertical = 8.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            // Header: Author info
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    modifier = Modifier
+                        .size(40.dp)
+                        .background(PrimaryBlue.copy(alpha = 0.1f), CircleShape),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Column {
-                        Text(
-                            text = "Aditya Kulkarni",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = TextPrimaryLight
-                        )
-                        Text(
-                            text = "ME • 4th Year",
-                            style = MaterialTheme.typography.labelMedium,
-                            color = TextSecondaryLight
-                        )
-                    }
-                    
+                    Icon(Icons.Filled.Person, contentDescription = null, tint = PrimaryBlue)
+                }
+                Spacer(modifier = Modifier.width(12.dp))
+                Column {
+                    Text(text = authorName, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = TextPrimaryLight)
+                    Text(text = timeAgo, style = MaterialTheme.typography.labelSmall, color = TextSecondaryLight)
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(12.dp))
+            
+            // Content
+            Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = TextPrimaryLight)
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(text = description, style = MaterialTheme.typography.bodyMedium, color = TextSecondaryLight, maxLines = 3, overflow = TextOverflow.Ellipsis)
+            
+            Spacer(modifier = Modifier.height(12.dp))
+            
+            // Tags
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                tags.forEach { tag ->
                     Surface(
-                        color = PrimaryBlue.copy(alpha = 0.1f),
-                        shape = RoundedCornerShape(16.dp)
+                        color = BackgroundLight,
+                        shape = RoundedCornerShape(8.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, Color.LightGray.copy(alpha = 0.5f))
                     ) {
                         Text(
-                            text = "98% Match",
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                            style = MaterialTheme.typography.labelMedium,
-                            color = PrimaryBlue,
-                            fontWeight = FontWeight.Bold
+                            text = tag,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextPrimaryLight
                         )
                     }
                 }
-                
-                Spacer(modifier = Modifier.height(12.dp))
-                
-                Text(
-                    text = "such as RAG Research & Implementation",
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = TextPrimaryLight
-                )
-                
-                Spacer(modifier = Modifier.height(4.dp))
-                
-                Text(
-                    text = "Only one person, Aditya Kulkarni from the ME department, is listed with the relevant skill Edge...",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = TextSecondaryLight,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                
-                Spacer(modifier = Modifier.height(12.dp))
-                
-                FlowRow(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    val tags = listOf("such as RAG", "Git", "Figma", "DSA")
-                    tags.forEach { tag ->
-                        Surface(
-                            color = BackgroundLight,
-                            shape = RoundedCornerShape(8.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, Color.LightGray.copy(alpha = 0.5f))
-                        ) {
-                            Text(
-                                text = tag,
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                                style = MaterialTheme.typography.labelSmall,
-                                color = TextPrimaryLight
-                            )
-                        }
-                    }
-                }
-                
-                Spacer(modifier = Modifier.height(16.dp))
-                Divider(color = Color.LightGray.copy(alpha = 0.3f))
-                Spacer(modifier = Modifier.height(12.dp))
-                
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            Divider(color = Color.LightGray.copy(alpha = 0.3f))
+            Spacer(modifier = Modifier.height(12.dp))
+            
+            // Actions
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.clickable { isLiked = !isLiked }
+                    ) {
                         Icon(
-                            Icons.Outlined.Info, // Placeholder for book icon
-                            contentDescription = null,
-                            modifier = Modifier.size(16.dp),
-                            tint = TextSecondaryLight
+                            imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
+                            contentDescription = "Like",
+                            tint = if (isLiked) Color.Red else TextSecondaryLight,
+                            modifier = Modifier.size(20.dp)
                         )
                         Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            text = "2 shared courses",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = TextSecondaryLight
-                        )
+                        Text("Like", style = MaterialTheme.typography.labelMedium, color = TextSecondaryLight)
                     }
-                    
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Surface(
-                            color = PrimaryBlue.copy(alpha = 0.1f),
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier.clickable { }
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Icon(
-                                    Icons.Outlined.Info,
-                                    contentDescription = null,
-                                    modifier = Modifier.size(14.dp),
-                                    tint = PrimaryBlue
-                                )
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Text(
-                                    text = "Why match",
-                                    style = MaterialTheme.typography.labelMedium,
-                                    color = PrimaryBlue,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                        }
-                        
-                        Surface(
-                            color = PrimaryBlue.copy(alpha = 0.1f),
-                            shape = RoundedCornerShape(8.dp),
-                            modifier = Modifier.clickable { }
-                        ) {
-                            Icon(
-                                Icons.Outlined.Email,
-                                contentDescription = null,
-                                modifier = Modifier.padding(8.dp).size(16.dp),
-                                tint = PrimaryBlue
-                            )
-                        }
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Outlined.ChatBubbleOutline, contentDescription = "Comment", tint = TextSecondaryLight, modifier = Modifier.size(20.dp))
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text("Comment", style = MaterialTheme.typography.labelMedium, color = TextSecondaryLight)
                     }
+                }
+                
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.clickable { isSaved = !isSaved }
+                ) {
+                    Icon(
+                        imageVector = if (isSaved) Icons.Filled.Bookmark else Icons.Outlined.BookmarkBorder,
+                        contentDescription = "Save",
+                        tint = if (isSaved) PrimaryBlue else TextSecondaryLight,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(if (isSaved) "Saved" else "Save", style = MaterialTheme.typography.labelMedium, color = TextSecondaryLight)
                 }
             }
         }

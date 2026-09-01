@@ -30,7 +30,7 @@ fun ExplanationScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Why This Match?") },
+                title = { Text("Profile") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
@@ -40,9 +40,11 @@ fun ExplanationScreen(
         },
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                onClick = onStartConversation,
+                onClick = { /* Inactive as per user request */ },
                 icon = { Icon(Icons.Default.Send, contentDescription = "Connect") },
-                text = { Text("Start Conversation") }
+                text = { Text("Start Conversation") },
+                containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                contentColor = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     ) { paddingValues ->
@@ -120,7 +122,7 @@ fun ExplanationScreen(
 
             // Reason Display
             Text(
-                text = "The Engine's Analysis:",
+                text = "Projects & Experience:",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground
@@ -139,7 +141,7 @@ fun ExplanationScreen(
             Spacer(modifier = Modifier.height(16.dp))
             
             Text(
-                text = "Connecting with $name can help you avoid common pitfalls and accelerate your progress by learning from their past experience.",
+                text = "Connecting with $name can help you avoid common pitfalls and accelerate your progress.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

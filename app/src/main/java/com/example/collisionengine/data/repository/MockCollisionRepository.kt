@@ -64,11 +64,11 @@ class MockCollisionRepository(private val context: Context) {
                     if (relatedProject != null) {
                         val projText = "${relatedProject.technologies} ${relatedProject.domain}".lowercase()
                         keywords.forEach { keyword -> if (projText.contains(keyword)) score += 30 }
-                        matchReason = "Built project: '${relatedProject.title}' using ${relatedProject.technologies.split(",").take(2).joinToString(", ")}"
+                        matchReason = "Built project: '${relatedProject.title}' using ${relatedProject.technologies?.split(",")?.take(2)?.joinToString(", ") ?: ""}"
                     } else {
-                        matchReason = "Has skills in ${student.skills.split(",").take(3).joinToString(", ")}"
+                        matchReason = "Has skills in ${student.skills?.split(",")?.take(3)?.joinToString(", ") ?: ""}"
                     }
-                    matches.add(CollisionMatch(student.name, "Student (${student.year})", matchReason, score.coerceAtMost(99)))
+                    matches.add(CollisionMatch(student.name ?: "Unknown", "Student (${student.year ?: ""})", matchReason, score.coerceAtMost(99)))
                 }
             }
             
@@ -80,7 +80,7 @@ class MockCollisionRepository(private val context: Context) {
                     if (allText.contains(keyword)) score += 35
                 }
                 if (score > 0) {
-                    matches.add(CollisionMatch(fac.name, "Faculty (${fac.department})", "Expertise in ${fac.expertise.split(",").take(2).joinToString(", ")}", score.coerceAtMost(98)))
+                    matches.add(CollisionMatch(fac.name ?: "Unknown", "Faculty (${fac.department ?: ""})", "Expertise in ${fac.expertise?.split(",")?.take(2)?.joinToString(", ") ?: ""}", score.coerceAtMost(98)))
                 }
             }
 
