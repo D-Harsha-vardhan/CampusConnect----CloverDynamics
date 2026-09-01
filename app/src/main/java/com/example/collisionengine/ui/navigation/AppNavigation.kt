@@ -13,6 +13,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.ime
+import androidx.compose.ui.platform.LocalDensity
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.collisionengine.ui.components.CustomBottomNavBar
@@ -40,10 +43,12 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
         else -> com.example.collisionengine.ui.theme.BackgroundLight // Light
     }
 
+    val imeBottom = WindowInsets.ime.getBottom(LocalDensity.current)
+    val isKeyboardOpen = imeBottom > 0
     Scaffold(
         containerColor = backgroundColor,
         bottomBar = {
-            if (showBottomNav) {
+            if (showBottomNav && !isKeyboardOpen) {
                 val navBarRoute = when (currentRoute) {
                     Screen.Home.route -> "home"
                     Screen.Research.route -> "research"
@@ -77,12 +82,24 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
                 .fillMaxSize()
                 // Content extends behind the floating bottom bar
         ) {
+            val bottomNavRoutes = listOf(Screen.Home.route, Screen.Research.route, Screen.Messages.route, Screen.Profile.route)
+            
             NavHost(
                 navController = navController,
                 startDestination = Screen.Splash.route,
                 modifier = Modifier.fillMaxSize(),
-                enterTransition = { slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(300)) + fadeIn(animationSpec = tween(300)) },
-                exitTransition = { slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(300)) + fadeOut(animationSpec = tween(300)) },
+                enterTransition = { 
+                    val initialIndex = bottomNavRoutes.indexOf(initialState.destination.route)
+                    val targetIndex = bottomNavRoutes.indexOf(targetState.destination.route)
+                    val isForward = if (initialIndex != -1 && targetIndex != -1) targetIndex > initialIndex else true
+                    slideInHorizontally(initialOffsetX = { if (isForward) 1000 else -1000 }, animationSpec = tween(300)) + fadeIn(animationSpec = tween(300)) 
+                },
+                exitTransition = { 
+                    val initialIndex = bottomNavRoutes.indexOf(initialState.destination.route)
+                    val targetIndex = bottomNavRoutes.indexOf(targetState.destination.route)
+                    val isForward = if (initialIndex != -1 && targetIndex != -1) targetIndex > initialIndex else true
+                    slideOutHorizontally(targetOffsetX = { if (isForward) -1000 else 1000 }, animationSpec = tween(300)) + fadeOut(animationSpec = tween(300)) 
+                },
                 popEnterTransition = { slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(300)) + fadeIn(animationSpec = tween(300)) },
                 popExitTransition = { slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(300)) + fadeOut(animationSpec = tween(300)) }
             ) {
@@ -109,6 +126,17 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
                         onNavigateBack = { navController.popBackStack() },
                         onFindCollisions = { query -> 
                             navController.navigate(Screen.Results.createRoute("Research", query))
+                        },
+                        onMatchClick = { match ->
+                            val encodedReason = java.net.URLEncoder.encode(match.matchReasonText, "UTF-8")
+                            navController.navigate(
+                                Screen.Explanation.createRoute(
+                                    name = match.name,
+                                    role = match.role,
+                                    reason = encodedReason,
+                                    score = 98 // Hardcode for now, or add to ProfileMatch
+                                )
+                            )
                         }
                     )
                 }
@@ -119,6 +147,17 @@ fun AppNavigation(navController: NavHostController = rememberNavController()) {
                         onNavigateBack = { navController.popBackStack() },
                         onFindCollisions = { query -> 
                             navController.navigate(Screen.Results.createRoute("Placement", query))
+                        },
+                        onMatchClick = { match ->
+                            val encodedReason = java.net.URLEncoder.encode(match.matchReasonText, "UTF-8")
+                            navController.navigate(
+                                Screen.Explanation.createRoute(
+                                    name = match.name,
+                                    role = match.role,
+                                    reason = encodedReason,
+                                    score = 98 // Hardcode for now
+                                )
+                            )
                         }
                     )
                 }

@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.collisionengine.ui.components.*
 import com.example.collisionengine.ui.theme.*
+import com.example.collisionengine.data.state.GlobalProfileState
 
 @Composable
 fun HomeScreen(
@@ -41,6 +42,7 @@ fun HomeScreen(
     var isPlacementLiked by remember { mutableStateOf(false) }
     
     var isVisible by remember { mutableStateOf(false) }
+    val userName by GlobalProfileState.name.collectAsState()
     LaunchedEffect(Unit) {
         isVisible = true
     }
@@ -76,7 +78,7 @@ fun HomeScreen(
                 visible = isVisible,
                 enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300))
             ) {
-                TopHeader(onNotificationClick = onNavigateToNotifications)
+                TopHeader(userName = userName, onNotificationClick = onNavigateToNotifications)
             }
             
             Spacer(modifier = Modifier.height(16.dp))
@@ -188,6 +190,49 @@ fun HomeScreen(
                             }
                         }
                     }
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(32.dp))
+            
+            // Research Papers Feed
+            androidx.compose.animation.AnimatedVisibility(
+                visible = isVisible,
+                enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300, delayMillis = 250)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300, delayMillis = 250))
+            ) {
+                Column {
+                    Text(
+                        text = "Recent Research & Ideas",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = TextPrimaryLight,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(horizontal = 24.dp)
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    
+                    ResearchPaperPost(
+                        authorName = "Dr. Emily Chen",
+                        timeAgo = "2 hours ago",
+                        title = "Optimizing LLM Inference on Edge Devices",
+                        description = "Explored techniques for quantization and distillation to run large language models on resource-constrained hardware with minimal accuracy loss.",
+                        tags = listOf("AI", "Edge Computing", "LLM")
+                    )
+                    
+                    ResearchPaperPost(
+                        authorName = "Michael Ross",
+                        timeAgo = "5 hours ago",
+                        title = "Graph Neural Networks for Social Recommendation",
+                        description = "A novel approach leveraging GNNs to improve friend recommendation algorithms by analyzing complex social network topologies.",
+                        tags = listOf("GNN", "Social Networks", "ML")
+                    )
+                    
+                    ResearchPaperPost(
+                        authorName = "Sarah Jenkins",
+                        timeAgo = "1 day ago",
+                        title = "Sustainable Battery Technologies",
+                        description = "Reviewing the latest advancements in solid-state batteries and their potential to replace lithium-ion in the next decade.",
+                        tags = listOf("Green Tech", "Hardware", "Energy")
+                    )
                 }
             }
             
