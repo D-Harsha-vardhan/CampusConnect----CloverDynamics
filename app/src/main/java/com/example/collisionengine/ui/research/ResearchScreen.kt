@@ -31,7 +31,8 @@ fun ResearchScreen(
     onFindCollisions: (String) -> Unit
 ) {
     val queryText by viewModel.queryText.collectAsState()
-    var hasSearched by remember { mutableStateOf(false) }
+    val responseText by viewModel.responseText.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
 
     Scaffold(
         topBar = {
@@ -87,7 +88,18 @@ fun ResearchScreen(
             
             
             // Content Area
-            if (hasSearched) {
+            if (isLoading) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    CircularProgressIndicator(color = PrimaryBlue)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text("Asking Databricks Genie...", color = Color.Gray)
+                }
+            } else if (responseText != null) {
                 // Inline Results
                 Column(
                     modifier = Modifier
@@ -95,23 +107,20 @@ fun ResearchScreen(
                         .padding(24.dp)
                 ) {
                     Text(
-                        text = "AI Identified 2 Research Collisions",
+                        text = "Campus Connect AI Response",
                         style = MaterialTheme.typography.titleMedium,
                         color = PrimaryBlue,
                         fontWeight = FontWeight.Bold
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     
-                    // Simple mock result card for inline view
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(containerColor = Color(0xFFF8F9FA)),
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            Text(text = "Dr. Emily Chen is working on a similar dataset.", color = Color.Black, fontWeight = FontWeight.Bold)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(text = "Match confidence: 92% based on your description.", color = Color.DarkGray, style = MaterialTheme.typography.bodySmall)
+                            Text(text = responseText ?: "", color = Color.Black)
                         }
                     }
                 }
@@ -171,8 +180,8 @@ fun ResearchScreen(
                     shape = RoundedCornerShape(24.dp),
                     trailingIcon = {
                         IconButton(
-                            onClick = { hasSearched = true },
-                            enabled = queryText.isNotBlank()
+                            onClick = { viewModel.askDatabricks() },
+                            enabled = queryText.isNotBlank() && !isLoading
                         ) {
                             Icon(
                                 Icons.Default.Send,

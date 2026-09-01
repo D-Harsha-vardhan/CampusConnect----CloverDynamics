@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -31,12 +32,13 @@ fun PlacementScreen(
     onFindCollisions: (String) -> Unit
 ) {
     val queryText by viewModel.queryText.collectAsState()
-    var hasSearched by remember { mutableStateOf(false) }
+    val responseText by viewModel.responseText.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Campus Connect AI", color = Color.White) },
+                title = { Text("What if simulator", color = Color.White) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
@@ -87,7 +89,18 @@ fun PlacementScreen(
             
             
             // Content Area
-            if (hasSearched) {
+            if (isLoading) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    CircularProgressIndicator(color = PrimaryBlue)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text("Asking Databricks Genie...", color = Color.Gray)
+                }
+            } else if (responseText != null) {
                 // Inline Results
                 Column(
                     modifier = Modifier
@@ -95,23 +108,20 @@ fun PlacementScreen(
                         .padding(24.dp)
                 ) {
                     Text(
-                        text = "AI Identified 3 Placement Collisions",
+                        text = "What if simulator Response",
                         style = MaterialTheme.typography.titleMedium,
                         color = PrimaryBlue,
                         fontWeight = FontWeight.Bold
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     
-                    // Simple mock result card for inline view
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(containerColor = Color(0xFF1E293B)),
                         shape = RoundedCornerShape(16.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            Text(text = "Sarah J. recently interviewed for a similar SWE role.", color = Color.White, fontWeight = FontWeight.Bold)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(text = "Match confidence: 88% based on your prep.", color = Color.White.copy(alpha=0.7f), style = MaterialTheme.typography.bodySmall)
+                            Text(text = responseText ?: "", color = Color.White)
                         }
                     }
                 }
@@ -124,7 +134,7 @@ fun PlacementScreen(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Talk to Campus Connect AI",
+                        text = "Talk to What if simulator",
                         style = MaterialTheme.typography.headlineSmall,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
@@ -171,8 +181,8 @@ fun PlacementScreen(
                     shape = RoundedCornerShape(24.dp),
                     trailingIcon = {
                         IconButton(
-                            onClick = { hasSearched = true },
-                            enabled = queryText.isNotBlank()
+                            onClick = { viewModel.askDatabricks() },
+                            enabled = queryText.isNotBlank() && !isLoading
                         ) {
                             Icon(
                                 Icons.Default.Send,
