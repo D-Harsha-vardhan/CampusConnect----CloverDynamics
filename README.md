@@ -1,15 +1,15 @@
-# Campus Connect (formerly The Collision Engine)
+# Campus Connect AI (Clover Dynamics)
 
 A native Android application designed to facilitate campus discovery. Instead of acting like a traditional chatbot, Campus Connect helps students find peers and faculty who have solved similar problems in research or placement contexts. 
 
-By analyzing overlapping attributes (skills, methodologies, company interviews, domains), the app calculates "Collision Scores" to intelligently match you with the exact right people on campus.
+By analyzing overlapping attributes (skills, methodologies, company interviews, domains) using Nvidia's Nemotron AI, the app intelligently extracts candidates and cross-references them against an embedded offline dataset to give you rich, beautiful profile cards of exactly the right people on campus.
 
 ## 🌟 Key Features
 - **Research Collisions:** Search for overlapping research topics, hardware (e.g., Raspberry Pi), and AI domains.
 - **Placement Collisions:** Find seniors or peers who have interviewed at your target companies for specific roles.
-- **Explainable AI:** A detailed breakdown of exactly *why* a match was made, providing conversation icebreakers.
-- **AI Conversation Starter:** Auto-generated introductory messages based on the shared structural overlap.
-- **Feedback Loop:** Built-in 👍/👎 rating system to improve the matching algorithm over time.
+- **Nvidia Nemotron LLM:** Powered by `nvidia/nemotron-3.5-lightning-30b-a3b` for fast, intelligent reasoning and entity extraction.
+- **Offline Dataset Matching:** Lightning-fast profile matching using bundled `Students.json` and `Faculty.json` datasets inside the app.
+- **Glassmorphic UI:** A premium, modern dark-themed profile UI built in Jetpack Compose.
 
 ---
 
@@ -21,22 +21,20 @@ graph TD
     B -->|Research| C[Enter Research Query]
     B -->|Placement| D[Enter Placement Query]
     
-    C --> E[Databricks/Genie Matching Engine]
+    C --> E[Nvidia Nemotron API]
     D --> E
     
-    E -->|Computes Collision Score| F[Results Screen]
-    F --> G[List of Match Cards]
+    E -->|Extracts Names| F[LocalDatasetClient]
+    F -->|Reads from assets/| G[(Students.json / Faculty.json)]
     
-    G -->|Tap Profile| H[Explanation Screen]
-    H --> I[Review AI Match Reason & Score]
+    G -->|Filters by Name| H[Results Screen]
+    H --> I[List of Match Cards]
     
-    I -->|Tap Connect| J[Conversation Starter]
-    J --> K[AI Drafts Intro Message]
+    I -->|Tap Profile| J[Profile Details Screen]
+    J --> K[View Skills, Projects & Match Score]
     
-    K --> L{Choose Platform}
-    L --> M[LinkedIn Deep Link]
-    L --> N[Email Client]
-    L --> O[In-App Chat via Supabase]
+    K -->|Tap Connect| L[AI Drafts Intro Message]
+    L --> M[In-App Chat]
 ```
 
 ---
@@ -55,25 +53,20 @@ graph TD
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/D-Harsha-vardhan/CampusConnect--Databricks.git
-   cd CampusConnect--Databricks
+   git clone https://github.com/D-Harsha-vardhan/CampusConnect--CloverDynamics.git
+   cd CampusConnect--CloverDynamics
    ```
 
-2. **Open in Android Studio:**
+2. **Configure the Nvidia API Key:**
+   - Open `app/src/main/java/com/example/collisionengine/data/network/NvidiaClient.kt`
+   - Paste your Nvidia API key into the `NVIDIA_API_KEY` constant on Line 13.
+
+3. **Open in Android Studio:**
    - Launch Android Studio and select **File -> Open**.
    - Navigate to the cloned directory and select it.
 
-3. **Configure the JDK:**
-   - Go to **File -> Settings -> Build, Execution, Deployment -> Build Tools -> Gradle**.
-   - Ensure the **Gradle JDK** is set to **Java 17**. (The project uses the Foojay toolchain resolver to help download this automatically if missing).
-
-4. **Sync Gradle:**
-   - Click the **Sync Project with Gradle Files** icon (the little elephant with a sync arrow).
-
-5. **Run the App:**
+4. **Sync Gradle & Run:**
+   - Click the **Sync Project with Gradle Files** icon (the little elephant).
    - Select an Android Emulator or physical device.
    - Click the green **Run 'app'** button (Shift + F10).
 
-## 🗺️ Next Steps
-- **Backend Integration:** Replace the mocked local JSON datasets with a live Databricks REST API.
-- **Real-time Chat:** Implement Supabase PostgreSQL WebSockets for the "In-App Chat" functionality.
