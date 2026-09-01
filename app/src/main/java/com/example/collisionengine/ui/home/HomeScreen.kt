@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.collisionengine.ui.components.*
 import com.example.collisionengine.ui.theme.*
+import com.example.collisionengine.data.state.GlobalProfileState
 
 @Composable
 fun HomeScreen(
@@ -41,6 +42,7 @@ fun HomeScreen(
     var isPlacementLiked by remember { mutableStateOf(false) }
     
     var isVisible by remember { mutableStateOf(false) }
+    val userName by GlobalProfileState.name.collectAsState()
     LaunchedEffect(Unit) {
         isVisible = true
     }
@@ -76,7 +78,7 @@ fun HomeScreen(
                 visible = isVisible,
                 enter = androidx.compose.animation.slideInVertically(initialOffsetY = { 50 }, animationSpec = androidx.compose.animation.core.tween(300)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(300))
             ) {
-                TopHeader(onNotificationClick = onNavigateToNotifications)
+                TopHeader(userName = userName, onNotificationClick = onNavigateToNotifications)
             }
             
             Spacer(modifier = Modifier.height(16.dp))

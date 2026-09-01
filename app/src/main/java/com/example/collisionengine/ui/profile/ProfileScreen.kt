@@ -26,6 +26,10 @@ import androidx.compose.ui.unit.dp
 import com.example.collisionengine.ui.components.StandardCard
 import com.example.collisionengine.ui.components.bouncyClickable
 import com.example.collisionengine.ui.theme.*
+import com.example.collisionengine.data.state.GlobalProfileState
+import androidx.compose.ui.window.Dialog
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,6 +38,14 @@ fun ProfileScreen(
 ) {
     var isLiked1 by remember { mutableStateOf(true) }
     var isLiked2 by remember { mutableStateOf(false) }
+
+    val userName by GlobalProfileState.name.collectAsState()
+    val userRole by GlobalProfileState.role.collectAsState()
+    val userBio by GlobalProfileState.bio.collectAsState()
+
+    var showEditDialog by remember { mutableStateOf(false) }
+    var showConnectionsDialog by remember { mutableStateOf(false) }
+    var showPapersDialog by remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier
@@ -124,21 +136,21 @@ fun ProfileScreen(
                     .padding(horizontal = 24.dp)
             ) {
                 Text(
-                    text = "Arjun",
+                    text = userName,
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
                     color = TextPrimaryLight
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Computer Science @ MIT",
+                    text = userRole,
                     style = MaterialTheme.typography.bodyLarge,
                     color = PrimaryBlue,
                     fontWeight = FontWeight.SemiBold
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Passionate about AI, scalable systems, and building tools that connect researchers globally. Always open to collaborate!",
+                    text = userBio,
                     style = MaterialTheme.typography.bodyMedium,
                     color = TextSecondaryLight,
                     textAlign = TextAlign.Center,
@@ -156,14 +168,18 @@ fun ProfileScreen(
                         .padding(vertical = 16.dp),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    ProfileStat(count = "24", label = "Connections")
+                    Box(modifier = Modifier.clickable { showConnectionsDialog = true }) {
+                        ProfileStat(count = "24", label = "Connections")
+                    }
                     Divider(
                         modifier = Modifier
                             .height(40.dp)
                             .width(1.dp),
                         color = BackgroundLight
                     )
-                    ProfileStat(count = "5", label = "Papers")
+                    Box(modifier = Modifier.clickable { showPapersDialog = true }) {
+                        ProfileStat(count = "5", label = "Papers")
+                    }
                     Divider(
                         modifier = Modifier
                             .height(40.dp)
@@ -177,7 +193,7 @@ fun ProfileScreen(
 
                 // Edit Profile Button
                 Button(
-                    onClick = { /* Edit Profile */ },
+                    onClick = { showEditDialog = true },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp)
@@ -223,6 +239,92 @@ fun ProfileScreen(
 
             Spacer(modifier = Modifier.height(120.dp)) // Padding for bottom nav
         }
+    }
+
+    if (showEditDialog) {
+        var editName by remember { mutableStateOf(userName) }
+        var editRole by remember { mutableStateOf(userRole) }
+        var editBio by remember { mutableStateOf(userBio) }
+        
+        AlertDialog(
+            onDismissRequest = { showEditDialog = false },
+            title = { Text("Edit Profile") },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(
+                        value = editName,
+                        onValueChange = { editName = it },
+                        label = { Text("Name") }
+                    )
+                    OutlinedTextField(
+                        value = editRole,
+                        onValueChange = { editRole = it },
+                        label = { Text("Role") }
+                    )
+                    OutlinedTextField(
+                        value = editBio,
+                        onValueChange = { editBio = it },
+                        label = { Text("Bio") },
+                        maxLines = 3
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    GlobalProfileState.name.value = editName
+                    GlobalProfileState.role.value = editRole
+                    GlobalProfileState.bio.value = editBio
+                    showEditDialog = false
+                }) {
+                    Text("Save")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showEditDialog = false }) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+
+    if (showConnectionsDialog) {
+        AlertDialog(
+            onDismissRequest = { showConnectionsDialog = false },
+            title = { Text("Connections (24)") },
+            text = {
+                LazyColumn(modifier = Modifier.fillMaxWidth().height(200.dp)) {
+                    items(listOf("Aditya Kulkarni", "Sarah J.", "Emily Chen", "Rajesh Kumar", "Michael Smith")) { name ->
+                        Text(text = name, modifier = Modifier.padding(vertical = 8.dp), style = MaterialTheme.typography.bodyLarge)
+                        Divider()
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showConnectionsDialog = false }) {
+                    Text("Close")
+                }
+            }
+        )
+    }
+
+    if (showPapersDialog) {
+        AlertDialog(
+            onDismissRequest = { showPapersDialog = false },
+            title = { Text("Papers (5)") },
+            text = {
+                LazyColumn(modifier = Modifier.fillMaxWidth().height(200.dp)) {
+                    items(listOf("Edge AI and Computer Vision", "Distributed Systems in Healthcare", "IoT for Smart Parking", "LLMs for Code Generation", "Graph Neural Networks")) { title ->
+                        Text(text = title, modifier = Modifier.padding(vertical = 8.dp), style = MaterialTheme.typography.bodyLarge)
+                        Divider()
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showPapersDialog = false }) {
+                    Text("Close")
+                }
+            }
+        )
     }
 }
 

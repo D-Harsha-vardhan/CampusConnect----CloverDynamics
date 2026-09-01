@@ -700,3 +700,235 @@ fun AnimatedWaveform(modifier: Modifier = Modifier, color: Color) {
         }
     }
 }
+
+@Composable
+fun ChatBubble(
+    message: String,
+    isUser: Boolean,
+    showTopMatchMock: Boolean = false
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        horizontalAlignment = if (isUser) Alignment.End else Alignment.Start
+    ) {
+        if (!isUser) {
+            Text(
+                text = "Campus Connect AI",
+                style = MaterialTheme.typography.labelSmall,
+                color = PrimaryBlue,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 4.dp, start = 8.dp)
+            )
+        }
+        
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(if (showTopMatchMock) 1f else 0.85f)
+                .background(
+                    color = if (isUser) PrimaryBlue else Color(0xFFF0F4F8),
+                    shape = RoundedCornerShape(
+                        topStart = 16.dp,
+                        topEnd = 16.dp,
+                        bottomStart = if (isUser) 16.dp else 4.dp,
+                        bottomEnd = if (isUser) 4.dp else 16.dp
+                    )
+                )
+                .padding(12.dp)
+        ) {
+            if (showTopMatchMock) {
+                Column {
+                    Text(
+                        text = message,
+                        color = TextPrimaryLight,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    TopMatchCard()
+                }
+            } else {
+                Text(
+                    text = message,
+                    color = if (isUser) Color.White else TextPrimaryLight,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun TopMatchCard() {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Top Matches (1)",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = TextPrimaryLight
+            )
+            Text(
+                text = "Sorted by AI Relevance",
+                style = MaterialTheme.typography.labelSmall,
+                color = TextSecondaryLight
+            )
+        }
+        
+        Spacer(modifier = Modifier.height(8.dp))
+        
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        Text(
+                            text = "Aditya Kulkarni",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = TextPrimaryLight
+                        )
+                        Text(
+                            text = "ME • 4th Year",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = TextSecondaryLight
+                        )
+                    }
+                    
+                    Surface(
+                        color = PrimaryBlue.copy(alpha = 0.1f),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Text(
+                            text = "98% Match",
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = PrimaryBlue,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                Text(
+                    text = "such as RAG Research & Implementation",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = TextPrimaryLight
+                )
+                
+                Spacer(modifier = Modifier.height(4.dp))
+                
+                Text(
+                    text = "Only one person, Aditya Kulkarni from the ME department, is listed with the relevant skill Edge...",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextSecondaryLight,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis
+                )
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    val tags = listOf("such as RAG", "Git", "Figma", "DSA")
+                    tags.forEach { tag ->
+                        Surface(
+                            color = BackgroundLight,
+                            shape = RoundedCornerShape(8.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, Color.LightGray.copy(alpha = 0.5f))
+                        ) {
+                            Text(
+                                text = tag,
+                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = TextPrimaryLight
+                            )
+                        }
+                    }
+                }
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                Divider(color = Color.LightGray.copy(alpha = 0.3f))
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            Icons.Outlined.Info, // Placeholder for book icon
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp),
+                            tint = TextSecondaryLight
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "2 shared courses",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextSecondaryLight
+                        )
+                    }
+                    
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Surface(
+                            color = PrimaryBlue.copy(alpha = 0.1f),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.clickable { }
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    Icons.Outlined.Info,
+                                    contentDescription = null,
+                                    modifier = Modifier.size(14.dp),
+                                    tint = PrimaryBlue
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = "Why match",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = PrimaryBlue,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                        
+                        Surface(
+                            color = PrimaryBlue.copy(alpha = 0.1f),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.clickable { }
+                        ) {
+                            Icon(
+                                Icons.Outlined.Email,
+                                contentDescription = null,
+                                modifier = Modifier.padding(8.dp).size(16.dp),
+                                tint = PrimaryBlue
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

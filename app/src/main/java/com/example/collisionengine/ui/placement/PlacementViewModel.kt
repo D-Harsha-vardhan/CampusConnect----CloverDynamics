@@ -7,13 +7,15 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import com.example.collisionengine.data.model.ChatMessage
+import kotlinx.coroutines.launch
 
 class PlacementViewModel : ViewModel() {
     private val _queryText = MutableStateFlow("")
     val queryText: StateFlow<String> = _queryText.asStateFlow()
     
-    private val _responseText = MutableStateFlow<String?>(null)
-    val responseText: StateFlow<String?> = _responseText.asStateFlow()
+    private val _messages = MutableStateFlow<List<ChatMessage>>(emptyList())
+    val messages: StateFlow<List<ChatMessage>> = _messages.asStateFlow()
     
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
@@ -26,12 +28,19 @@ class PlacementViewModel : ViewModel() {
         val query = _queryText.value
         if (query.isBlank()) return
         
+        val userMsg = ChatMessage(text = query, isUser = true)
+        _messages.value = _messages.value + userMsg
+        
         _isLoading.value = true
-        _responseText.value = null
+        _queryText.value = "" // clear input
         
         viewModelScope.launch {
             val result = DatabricksClient.askGenie(query)
-            _responseText.value = result
+            
+            // Add AI response, making the first one a TopMatch for demonstration if it has results
+            val isTopMatchMock = _messages.value.size <= 1 && result.length > 20
+            val aiMsg = ChatMessage(text = result, isUser = false, isTopMatch = isTopMatchMock)
+            _messages.value = _messages.value + aiMsg
             _isLoading.value = false
         }
     }
