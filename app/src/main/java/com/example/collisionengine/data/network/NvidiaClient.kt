@@ -10,7 +10,7 @@ import java.net.URL
 
 object NvidiaClient {
     // Optional: Add your Nvidia API Key here if you want to use the LLM for name extraction
-    private const val NVIDIA_API_KEY = "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"
+    private const val NVIDIA_API_KEY = "add your nvidid api key"
     
     suspend fun extractNames(text: String): List<String> = withContext(Dispatchers.IO) {
         if (NVIDIA_API_KEY.isBlank()) {
